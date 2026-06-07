@@ -4,25 +4,28 @@ My First JavaScript Mod (There's also a bit of Ash Jason in it)
 
 
 # JavaScript Content 
-  
-# Walls
-  -r0uter:
-   max health 
-   have lightning
 
-  -feedbacker:
-   Ultrakill reference 
-   +paryy
-   have custome paryy soun
-   dont parry lasers
+  -r0uter
+
+     max health 
+     have lightning
+
+  -feedbacker
+
+     Ultrakill reference 
+     +paryy
+     have custome paryy soun
+     dont parry lasers
  
   -VarWall 
-   it's experement
-   health is var
-   can only be placed on sand (not on black)
+
+     it's experement
+     health is var
+     can only be placed on sand (not on black)
    
   -ispectator 
-   checks and displays the name (ID) of the surface on which it was placed (can be customized)
+
+     checks and displays the name (ID) of the surface on which it was placed (can be customized)
 
   -menu
 
@@ -33,29 +36,34 @@ My First JavaScript Mod (There's also a bit of Ash Jason in it)
      have custom particles 
 
   -sentry
-   have PointBulletType
+
+     have PointBulletType
 
   -detk
-   has increased damage to working energy
+
+     has increased damage to working energy
 
   -xyeta (I/II)
 
-   -I
+     -I
 
-    may shoot after some time
+      may shoot after some time
 
-   -II
+     -II
 
-    can't shoot
+      can't shoot
 
   -pmd
-   basic Payload Mass Driver
+
+     basic Payload Mass Driver
 
   -initial message
-   can be customized(../sprites/hi.png)
-   can be turned off in special settings
+
+     can be customized(../sprites/hi.png)
+     can be turned off in special settings
 
   -JSM Setings
+
 
     
     
