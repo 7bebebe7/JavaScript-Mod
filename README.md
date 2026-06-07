@@ -25,10 +25,12 @@ My First JavaScript Mod (There's also a bit of Ash Jason in it)
    checks and displays the name (ID) of the surface on which it was placed (can be customized)
 
   -menu
-   have simple menu
+
+     have simple menu
 
   -tur
-   have custom particles 
+
+     have custom particles 
 
   -sentry
    have PointBulletType
@@ -54,8 +56,6 @@ My First JavaScript Mod (There's also a bit of Ash Jason in it)
    can be turned off in special settings
 
   -JSM Setings
-
-     bbbbb
 
     
     
