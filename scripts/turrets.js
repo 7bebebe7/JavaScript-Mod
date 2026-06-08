@@ -106,7 +106,6 @@ const dod = extend(LiquidTurret, "dod", {
     size: 1,
     health: 555,
     requirements: [
-      metaglass/300,
       copper/10,
       graphite/200,
     ],
