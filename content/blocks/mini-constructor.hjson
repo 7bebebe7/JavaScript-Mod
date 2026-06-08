@@ -3,9 +3,9 @@ type: UnitAssembler
 size: 3
 category: units
 requirements: [
-  silicon/600
-  graphite/850
-  phase-fabric/350
+  silicon/300
+  graphite/550
+  phase-fabric/200
 ]
 
 //специфічні налаштування
