@@ -63,7 +63,19 @@ My First JavaScript Mod (There's also a bit of Ash Jason in it)
      can be turned off in special settings
 
   -JSM Setings
+  
+![Settings](github/JSM-setings.jpeg)
 
+# Hjson Content
 
-    
-    
+  -mini constructor
+
+    it's unitAssembler 
+    create fortress
+    does not require energy
+   
+  -wall assembler
+  
+    create all 1x1 walls
+    requires 6 water per second
+  
