@@ -1,0 +1,34 @@
+//базові налаштування
+type: UnitAssembler
+size: 3
+category: units
+requirements: [
+  silicon/600
+  graphite/850
+  phase-fabric/350
+]
+
+//специфічні налаштування
+areaSize: 9
+
+//налаштування збірочних дронів
+droneType: assembly-drone
+dronesCreated: 4
+droneConstructTime: 180
+
+//плани збірки
+plans: [
+  {
+    type: AssemblerUnitPlan
+
+    unit: fortress
+
+    requirements: [
+      plastanium-wall-large/5
+      salvo/2
+      mace/4
+    ]
+
+    time: 600
+  }
+]

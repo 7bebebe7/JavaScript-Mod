@@ -1,0 +1,39 @@
+type: Constructor
+description: 
+'''
+  Recipes: 
+    - copper wall  
+    - titanium wall  
+    - plastanium wall  
+    - thorium wall  
+    - phase wall
+    - surge wall
+    - scrap wall
+    - door
+''' 
+size: 2
+category: units
+requirements: [
+  silicon/200
+  graphite/250
+  titanium/350
+] 
+hasPower: true
+maxBlockSize: 1
+consumes: {
+  power: 3.5
+  liquids: [
+    water/0.1
+  ]
+}
+buildSpeed: 1.7
+filter: [
+  copper-wall,
+  titanium-wall,  
+  plastanium-wall, 
+  thorium-wall,  
+  phase-wall,
+  surge-wall,
+  scrap-wall,
+  door,
+]
