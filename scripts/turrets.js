@@ -100,3 +100,15 @@ xyi.requirements = ItemStack.with(
     Items.metaglass, 3000,
     Items.graphite, 4000,
 );
+
+
+const dod = extend(LiquidTurret, "dod", {
+    size: 1,
+    health: 555,
+    requirements: [
+      metaglass/300,
+      copper/10,
+      graphite/200,
+    ],
+    category: turret,
+});
