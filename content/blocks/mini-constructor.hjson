@@ -24,9 +24,9 @@ plans: [
     unit: fortress
 
     requirements: [
-      plastanium-wall-large/5
+      plastanium-wall-large/2
       salvo/2
-      mace/4
+      mace/1
     ]
 
     time: 600
