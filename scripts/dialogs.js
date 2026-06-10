@@ -120,9 +120,17 @@ function blockmenu() {
 
     M.show();
 }
+//Dev Menu 
+
+function DevMenu() {
+   const DM = new BaseDialog("Dev Menu");
+   DM.cont.add("Dev menu test")
+   DM.show()
+}
 
 
 
 module.exports = {
-   blockmenu: blockmenu
+   blockmenu: blockmenu,
+   DevMenu: DevMenu,
 };
