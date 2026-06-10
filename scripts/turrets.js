@@ -105,9 +105,12 @@ xyi.requirements = ItemStack.with(
 const dod = extend(LiquidTurret, "dod", {
     size: 1,
     health: 555,
-    requirements: [
-      copper/10,
-      graphite/200,
-    ],
-    category: turret,
 });
+
+dod.requirements = ItemStack.with(
+    Items.copper, 100,
+    Items.graphite, 200,
+    Items.metaglass, 300,
+);
+dod.category = Category.turret;
+dod.buildVisibility = BuildVisibility.shown;
