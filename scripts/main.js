@@ -10,9 +10,11 @@ Events.on(ClientLoadEvent, () => {
         Vars.ui.hudGroup.fill(cons(t => {
             t.bottom();
 
-            t.button("Log", () => {
-                Log.info("Кнопка работает!");
-            }).size(150, 60);
+            const btn = t.button("Log", () => {
+                Log.info("Кнопка нажата!");
+            }).size(150, 60).padBottom(20).get();
+
+            btn.color.a = 0.5; 
         }));
     });
 });
