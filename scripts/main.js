@@ -6,15 +6,13 @@ require("bullets")
 require("payload")
 
 Events.on(ClientLoadEvent, () => {
-    const table = new Table();
+    Core.app.post(() => {
+        Vars.ui.hudGroup.fill(cons(t => {
+            t.bottom().right();
 
-    table.bottom().right();
-
-    table.button("Log", () => {
-        if (Vars.state.isGame()) {
-            Log.info("Привет!");
-        }
-    }).size(150, 60);
-
-    Vars.ui.hudGroup.addChild(table);
+            t.button("Log", () => {
+                Log.info("Кнопка работает!");
+            }).size(150, 60);
+        }));
+    });
 });
