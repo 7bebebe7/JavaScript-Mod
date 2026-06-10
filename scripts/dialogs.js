@@ -125,6 +125,7 @@ function blockmenu() {
 function DevMenu() {
    const DM = new BaseDialog("Dev Menu");
    DM.cont.add("Dev menu test")
+   DM.buttons.button("close", () =>{ DM.hide() })
    DM.show()
 }
 
