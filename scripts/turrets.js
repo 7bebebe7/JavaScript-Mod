@@ -114,8 +114,8 @@ dod.requirements = ItemStack.with(
 );
 
 dod.ammo(
-    Liquids.water,
-    Liquids.cryofluid,
+    Liquids.water, new LiquidBulletType(Liquids.water),
+    Liquids.cryofluid, new LiquidBulletType(Liquids.cryofluid)
 );
 
 dod.category = Category.turret;
