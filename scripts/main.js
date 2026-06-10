@@ -8,7 +8,7 @@ require("payload")
 Events.on(ClientLoadEvent, () => {
     Core.app.post(() => {
         Vars.ui.hudGroup.fill(cons(t => {
-            t.bottom().right();
+            t.bottom();
 
             t.button("Log", () => {
                 Log.info("Кнопка работает!");
