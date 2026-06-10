@@ -112,5 +112,11 @@ dod.requirements = ItemStack.with(
     Items.graphite, 200,
     Items.metaglass, 300,
 );
+
+dod.ammo(
+    Liquids.water,
+    Liquids.cryofluid,
+);
+
 dod.category = Category.turret;
 dod.buildVisibility = BuildVisibility.shown;
