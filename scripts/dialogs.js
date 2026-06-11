@@ -5,18 +5,20 @@
         t.check("Initial Message", Core.settings.getBool("mess", true), v => {
           Core.settings.put("mess", v);
           print(v ? "on" : "off");
-        }).left().colspan(2).row();
+        }).left().row();
         
-        t.add("[gray]You can change it by replacing the file /sprites/hi.png").left().padLeft(35).colspan(2).row(); //.row() тепер не отдельна функція
+        t.add("[gray]You can change it by replacing the file /sprites/hi.png").left().padLeft(35).row(); //.row() тепер не отдельна функція
         
         t.check("Show Tile Name", Core.settings.getBool("ISN", true), v => {
           Core.settings.put("ISN", v);
           print(v ? "on" : "off");
-        }).left().colspan(2).row();
+        }).left().row();
         
-        t.add("[gray]show tile block name in Inspector \n(does not apply to console)").left().padLeft(35).colspan(2).row();
+        t.add("[gray]show tile block name in Inspector \n(does not apply to console)").left().padLeft(35).row();
         
-        t.sliderPref("DevMenuAlpha", 50, 0, 100, 1, i => i + "%");
+        t.table(s =>{
+            s.sliderPref("devAlpha", 50, 0, 100, 1, i => i + "%");
+        }).growX().row();
         
         t.row()
         
