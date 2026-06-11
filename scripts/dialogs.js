@@ -16,8 +16,6 @@
         
         t.add("[gray]show tile block name in Inspector \n(does not apply to console)").left().padLeft(35).row();
         
-        t.sliderPref("Dev Menu", 100, 0, 100, 1, func(i => i + "%")).left().padLeft(35).row();
-        
         // кнопка з інонкою "і", текстом, для простої кнопки з  текстом: не вказувати параметер Icon
         t.button("content", Icon.info, () => {
           // те що робить кніпка
