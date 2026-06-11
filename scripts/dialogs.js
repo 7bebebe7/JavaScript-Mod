@@ -16,14 +16,19 @@
         
         t.add("[gray]show tile block name in Inspector \n(does not apply to console)").left().padLeft(35).row();
         
-        t.sliderPref(
-        "DevMenuAlpha", // ключ настройки
-        50,           // значение по умолчанию
-        1,             // минимум
-        100,           // максимум
-        1,             // шаг
-        s => s + "alpha"   // отображаемый текст
-        );
+        t.add("DevMenuAlpha").left();
+
+        const slider = new Slider(1, 100, 1, false);
+
+        slider.setValue(Core.settings.getInt("DevMenuAlpha", 50));
+
+        slider.moved(v => {
+        Core.settings.put("DevMenuAlpha", Math.floor(v));
+        });
+
+t.add(slider).width(250);
+
+t.row();
         
         // кнопка з інонкою "і", текстом, для простої кнопки з  текстом: не вказувати параметер Icon
         t.button("content", Icon.info, () => {
