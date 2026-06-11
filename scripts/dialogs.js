@@ -17,13 +17,13 @@
         t.add("[gray]show tile block name in Inspector \n(does not apply to console)").left().padLeft(35).row();
         
         t.sliderPref(
-        "damage-mult", // ключ настройки
-        100,           // значение по умолчанию
+        "Dev Menu alpha", // ключ настройки
+        50,           // значение по умолчанию
         1,             // минимум
-        500,           // максимум
+        100,           // максимум
         1,             // шаг
         s => s + "%"   // отображаемый текст
-        );
+        ).row();
         
         // кнопка з інонкою "і", текстом, для простої кнопки з текстом: не вказувати параметер Icon
         t.button("content", Icon.info, () => {
