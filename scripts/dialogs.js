@@ -139,9 +139,9 @@ function DevMenu() {
 
 function SetApl() {
     const SA = new BaseDialog("exit game?");
-    SA.cont.add(Iconc.warning + "[red]restart the game to apply the changes?").row()
-    SA.cont.button("No thanks", () => { SA.hide() }).size(100, 60).padTop(10)
-    SA.cont.button("Ok", () => { Packages.arc.Core.app.exit() }).size(100, 60).padTop(10)
+    SA.cont.add("[red][warn]restart the game to apply the changes?").row()
+    SA.cont.button("No thanks", () => { SA.hide() }).size(120, 40)
+    SA.cont.button("Ok", () => { Packages.arc.Core.app.exit() }).size(120, 40)
     SA.show()
 }
 
