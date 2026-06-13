@@ -1,5 +1,4 @@
 const { DevMenu } = require("dialogs");
-
 if (Core.settings.getBool("SDM", true)) {
   Events.on(ClientLoadEvent, () => {
         Core.app.post(() => {

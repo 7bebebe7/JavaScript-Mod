@@ -18,6 +18,7 @@
         
         t.check("Show Dev Menu", Core.settings.getBool("SDM", false), v => {
           Core.settings.put("SDM", v);
+          SetApl()
         }).left().row();
         
         t.add("[gray]The changes will be applied after restarting the game").left().padLeft(35).row();
@@ -124,7 +125,7 @@ function blockmenu() {
 
     M.show();
 }
-//Dev Menu 
+//Dev Menu-----------------------------------------------------------------------
 
 function DevMenu() {
    const DM = new BaseDialog("Dev Menu");
@@ -133,9 +134,19 @@ function DevMenu() {
    DM.show()
 }
 
+//setting apply-----------------------------------------------------------------------
+
+function SetApl() {
+    const SA = new BaseDialog("exit game?");
+    SA.cont.add("[red]restart the game to apply the changes?")
+    SA.cont.button("No thanks", () => { SA.hide() }).size(90, 40).padtop(10)
+    SA.cont.button("Ok", () => { Packages.arc.Core.app.exit() }).size(90, 40).padtop(10)
+}
 
 
+//-----------------------------------------------------------------------
 module.exports = {
    blockmenu: blockmenu,
    DevMenu: DevMenu,
+   SetApl: SetApl,
 };
