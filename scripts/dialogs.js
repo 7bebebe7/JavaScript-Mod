@@ -16,13 +16,10 @@
         
         t.add("[gray]show tile block name in Inspector \n(does not apply to console)").left().padLeft(35).row();
         
-        t.sliderPref(
-            "DevMenuAlpha",
-            50,
-            1,
-            100,
-            v => "" + v
-        );  
+        t.check("Show Dev Menu", Core.settings.getBool("SDM", false), v => {
+          Core.settings.put("SDM", v);
+          print(v ? "on" : "off");
+        }).left().row();
         
         // кнопка з інонкою "і", текстом, для простої кнопки з  текстом: не вказувати параметер Icon
         t.button("content", Icon.info, () => {
