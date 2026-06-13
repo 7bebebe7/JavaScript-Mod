@@ -131,16 +131,13 @@ function blockmenu() {
 
 function DevMenu() {
    const DM = new BaseDialog("Dev Menu");
-   //DM.cont.add("Dev menu test")
-   DM.buttons.button("close", () =>{ DM.hide() }).size(150, 60).padBottom(20)
-   DM.cont.button( Icon.file, () => {
-       
+   DM.buttons.button("close", () => { DM.hide() }).size(150, 60).padBottom(20)
+   DM.cont.button(Icon.file, () => {
        let core = Vars.player.team().core();
-    if(core != null){
-        core.items.add(Items.copper, 100);
-    }
-    
-   ) }).size(100, 100).pad(10)
+       if(core != null){
+           core.items.add(Items.copper, 100);
+       }
+   }).size(100, 100).pad(10)
    DM.show()
 }
 
