@@ -18,7 +18,6 @@
         
         t.check("Show Dev Menu", Core.settings.getBool("SDM", false), v => {
           Core.settings.put("SDM", v);
-          print(v ? "on" : "off");
         }).left().row();
         
         // кнопка з інонкою "і", текстом, для простої кнопки з  текстом: не вказувати параметер Icon
