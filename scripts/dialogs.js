@@ -26,6 +26,7 @@
         // кнопка з інонкою "і", текстом, для простої кнопки з  текстом: не вказувати параметер Icon
         t.button("content", Icon.info, () => {
           // те що робить кніпка
+          showCont()
               //розмір, відступи, та "ентер"
         }).center().padTop(20).size(200, 50).row();
         
@@ -33,9 +34,9 @@
       
       //контентовий діалог
       function showCont() {
-    const con = new BaseDialog("mod content");
+       const con = new BaseDialog("mod content");
 
-    con.cont.pane(p => {
+       con.cont.pane(p => {
 
         p.button("r0uter", new TextureRegionDrawable(Core.atlas.find("jsm-r0uter")), () => {
             const rou = Vars.content.block("jsm-r0uter");
@@ -82,11 +83,11 @@
             if (pmd) Vars.ui.content.show(pmd);
         }).size(210, 128).padTop(10).row();
 
-    }).size(260, 300);
+      }).size(260, 300);
 
-    con.addCloseButton();
-    con.show();
-    }
+        con.addCloseButton();
+        con.show();
+      }
       
       // діалогове вікно це функція щоб упростити код та виклик цього вікна
       //саме вікно:
@@ -141,6 +142,7 @@ function SetApl() {
     SA.cont.add("[red]restart the game to apply the changes?")
     SA.cont.button("No thanks", () => { SA.hide() }).size(90, 40).padTop(10)
     SA.cont.button("Ok", () => { Packages.arc.Core.app.exit() }).size(90, 40).padTop(10)
+    SA.show()
 }
 
 
