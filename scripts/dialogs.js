@@ -14,11 +14,13 @@
           print(v ? "on" : "off");
         }).left().row();
         
-        t.add("[gray]show tile block name in Inspector \n(does not apply to console)").left().padLeft(35).row();
+        t.add("[gray]Show tile block name in Inspector \n(does not apply to console)").left().padLeft(35).row();
         
         t.check("Show Dev Menu", Core.settings.getBool("SDM", false), v => {
           Core.settings.put("SDM", v);
         }).left().row();
+        
+        t.add("[gray]The changes will be applied after restarting the game").left().padLeft(35).row();
         
         // кнопка з інонкою "і", текстом, для простої кнопки з  текстом: не вказувати параметер Icon
         t.button("content", Icon.info, () => {
