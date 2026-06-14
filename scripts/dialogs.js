@@ -177,7 +177,7 @@ function Resources() {
         
     }).size(50,50).padLeft(5)
     
-    rec.buttons.row()
+    res.buttons.row()
 
     res.buttons.button("close", () => { res.hide() }).size(150, 60).padBottom(20)
     
