@@ -164,7 +164,7 @@ function Resources() {
         if (count > 1000) {
             count = 1000
         }
-        slider.setValue(value);
+        resSlider.setValue(value);
         
     }).size(50,50).padLeft(5)
 
