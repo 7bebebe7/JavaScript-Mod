@@ -145,7 +145,16 @@ function Resources() {
     
     res.cont.row();
     
-    res.cont.button(Icon.cancel,  () => { }).size(50,50).padRight(5)
+    res.cont.button(Icon.cancel,  () => {
+        
+        var count = resSlider.getValue()
+        count -=100 
+        if (count < -10000) {
+            count = -10000
+        }
+        resSlider.setValue(count);
+        
+    }).size(50,50).padRight(5)
     
     var resSlider
     
@@ -161,8 +170,8 @@ function Resources() {
         
         var count = resSlider.getValue()
         count +=100 
-        if (count > 1000) {
-            count = 1000
+        if (count > 10000) {
+            count = 10000
         }
         resSlider.setValue(count);
         
