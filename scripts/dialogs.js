@@ -132,7 +132,7 @@ function blockmenu() {
 function DevMenu() {
    const DM = new BaseDialog("Dev Menu");
    DM.buttons.button("close", () => { DM.hide() }).size(150, 60).padBottom(20)
-   DM.cont.button(Icon.drill, () => { Resources() }).size(50, 50).pad(10)
+   DM.cont.button(Icon.info, () => { Resources() }).size(50, 50).pad(10)
    DM.show()
 }
 
