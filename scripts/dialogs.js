@@ -145,7 +145,7 @@ function Resources() {
     
     res.cont.row();
     
-    res.cont.button(Icon.cancel,  () => { }).size(50,50).padRight(5)
+    res.cont.button(Icon.cancel,  () => { slider.setValue(slider.getValue() - 10) }).size(50,50).padRight(5)
     
     var resSlider
     
@@ -157,7 +157,7 @@ function Resources() {
     
     }).width(300);
     
-    res.cont.button(Icon.add,  () => { }).size(50,50).padLeft(5)
+    res.cont.button(Icon.add,  () => { slider.setValue(slider.getValue() + 10) }).size(50,50).padLeft(5)
 
     res.buttons.button("close", () => { res.hide() }).size(150, 60).padBottom(20)
     
