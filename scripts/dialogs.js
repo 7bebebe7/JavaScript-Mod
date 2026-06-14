@@ -185,7 +185,7 @@ function Resources() {
     
     res.cont.pane(l => {
         
-        l.button(Icon.copper, () => { 
+        l.button(new TextureRegionDrawable(Items.copper.uiIcon), () => { 
             
             let IC = resSlider.getValue()
             Vars.player.team().core().items.add(Items.copper, IC)
