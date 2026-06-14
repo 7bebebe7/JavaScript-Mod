@@ -141,7 +141,7 @@ function DevMenu() {
 function Resources() {
     const res = new BaseDialog("Resources");
     
-    let label = res.cont.add("0").center().get().colspan(3)
+    let label = res.cont.add("0").colspan(3).center().get()
     
     res.cont.row();
     
