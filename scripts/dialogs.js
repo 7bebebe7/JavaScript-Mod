@@ -141,61 +141,45 @@ function DevMenu() {
 function Resources() {
     const res = new BaseDialog("Resources");
     
-    var label = res.buttons.add("0").colspan(3).center().get()
+    let label = res.buttons.add("0").colspan(3).center().get()
     
-    //buttons
-    res.cont.pane(sl => {
-        
-        sl.button(Icon.cancel,  () => {
-            
-            var count = resSlider.getValue()
-            count -=100 
-            if (count < -10000) {
-                count = -10000
-            }
-            resSlider.setValue(count);
-            
-        }).size(50,50).padRight(5)
-        
-        var resSlider
-        
-        resSlider = sl.slider(-10000, 10000, 1, 0, ReValue => {
-            
-        print("Значение: " + ReValue);
-        
-        label.setText("" + Math.floor(ReValue));
-        
-        }).width(300).get()
-        
-        sl.button(Icon.add,  () => {
-            
-            var count = resSlider.getValue()
-            count +=100 
-            if (count > 10000) {
-                count = 10000
-            }
-            resSlider.setValue(count);
-            
-        }).size(50,50).padLeft(5)
-        
-        sl.row()
-        
-    })
+    res.buttons.row();
     
-        res.buttons.button("close", () => { res.hide() }).size(150, 60).colspan(4).padBottom(20)
-    
-    //cont
-    
-    res.cont.pane(l => {
+    res.buttons.button(Icon.cancel,  () => {
         
-        l.button(new TextureRegionDrawable(Items.copper.uiIcon), () => { 
-            
-            let IC = resSlider.getValue()
-            Vars.player.team().core().items.add(Items.copper, IC)
-            
-        }).size(60, 60)
+        var count = resSlider.getValue()
+        count -=100 
+        if (count < -10000) {
+            count = -10000
+        }
+        resSlider.setValue(count);
         
-    })
+    }).size(50,50).padRight(5)
+    
+    var resSlider
+    
+    resSlider = res.buttons.slider(-10000, 10000, 1, 0, ReValue => {
+        
+    print("Значение: " + ReValue);
+    
+    label.setText("" + Math.floor(ReValue));
+    
+    }).width(300).get()
+    
+    res.buttons.button(Icon.add,  () => {
+        
+        var count = resSlider.getValue()
+        count +=100 
+        if (count > 10000) {
+            count = 10000
+        }
+        resSlider.setValue(count);
+        
+    }).size(50,50).padLeft(5)
+    
+    res.buttons.row()
+
+    res.buttons.button("close", () => { res.hide() }).size(150, 60).colspan(3).padBottom(20)
     
     res.show()
     
