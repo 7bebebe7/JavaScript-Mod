@@ -141,11 +141,11 @@ function DevMenu() {
 function Resources() {
     const res = new BaseDialog("Resources");
     
+    let label = res.cont.add("0").center().get()
+    
     res.cont.row();
     
     res.cont.button(Icon.cancel,  () => { }).size(50,50).padRight(5)
-    
-    let label = res.cont.add("0").center().get()
     
     var resSlider
     
