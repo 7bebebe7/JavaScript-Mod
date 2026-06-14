@@ -143,7 +143,7 @@ function Resources() {
     
     let label = res.buttons.add("0").colspan(3).center().get()
     
-    res.buttons.row();
+    //buttons
     
     res.buttons.button(Icon.cancel,  () => {
         
@@ -179,7 +179,20 @@ function Resources() {
     
     res.buttons.row()
 
-    res.buttons.button("close", () => { res.hide() }).size(150, 60).colspan(3).padBottom(20)
+    res.buttons.button("close", () => { res.hide() }).size(150, 60).colspan(4).padBottom(20)
+    
+    //cont
+    
+    res.cont.pane(l => {
+        
+        l.button(new TextureRegionDrawable(Items.copper.uiIcon), () => { 
+            
+            let IC = resSlider.getValue()
+            Vars.player.team().core().items.add(Items.copper, IC)
+            
+        }).size(60, 60)
+        
+    })
     
     res.show()
     
