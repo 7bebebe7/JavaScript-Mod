@@ -141,11 +141,11 @@ function DevMenu() {
 function Resources() {
     const res = new BaseDialog("Resources");
     
-    let label = res.cont.add("0").colspan(3).center().get()
+    let label = res.buttons.add("0").colspan(3).center().get()
     
-    res.cont.row();
+    res.buttons.row();
     
-    res.cont.button(Icon.cancel,  () => {
+    res.buttons.button(Icon.cancel,  () => {
         
         var count = resSlider.getValue()
         count -=100 
@@ -158,7 +158,7 @@ function Resources() {
     
     var resSlider
     
-    resSlider = res.cont.slider(-10000, 10000, 1, 0, ReValue => {
+    resSlider = res.buttons.slider(-10000, 10000, 1, 0, ReValue => {
         
     print("Значение: " + ReValue);
     
@@ -166,7 +166,7 @@ function Resources() {
     
     }).width(300).get()
     
-    res.cont.button(Icon.add,  () => {
+    res.buttons.button(Icon.add,  () => {
         
         var count = resSlider.getValue()
         count +=100 
@@ -176,6 +176,8 @@ function Resources() {
         resSlider.setValue(count);
         
     }).size(50,50).padLeft(5)
+    
+    rec.buttons.row()
 
     res.buttons.button("close", () => { res.hide() }).size(150, 60).padBottom(20)
     
