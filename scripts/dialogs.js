@@ -179,7 +179,7 @@ function Resources() {
     
     res.buttons.row()
 
-    res.buttons.button("close", () => { res.hide() }).size(150, 60).colspan(4).padBottom(20)
+    res.buttons.button("close", () => { res.hide() }).size(150, 60).padBottom(20)
     
     //cont
     
