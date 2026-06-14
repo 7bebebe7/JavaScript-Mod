@@ -141,45 +141,48 @@ function DevMenu() {
 function Resources() {
     const res = new BaseDialog("Resources");
     
-    let label = res.buttons.add("0").colspan(3).center().get()
+    var label = res.buttons.add("0").colspan(3).center().get()
     
     //buttons
-    
-    res.buttons.button(Icon.cancel,  () => {
+    res.cont.pane(sl => {
         
-        var count = resSlider.getValue()
-        count -=100 
-        if (count < -10000) {
-            count = -10000
-        }
-        resSlider.setValue(count);
+        sl.buttons.button(Icon.cancel,  () => {
+            
+            var count = resSlider.getValue()
+            count -=100 
+            if (count < -10000) {
+                count = -10000
+            }
+            resSlider.setValue(count);
+            
+        }).size(50,50).padRight(5)
         
-    }).size(50,50).padRight(5)
-    
-    var resSlider
-    
-    resSlider = res.buttons.slider(-10000, 10000, 1, 0, ReValue => {
+        var resSlider
         
-    print("Значение: " + ReValue);
-    
-    label.setText("" + Math.floor(ReValue));
-    
-    }).width(300).get()
-    
-    res.buttons.button(Icon.add,  () => {
+        resSlider = sl.buttons.slider(-10000, 10000, 1, 0, ReValue => {
+            
+        print("Значение: " + ReValue);
         
-        var count = resSlider.getValue()
-        count +=100 
-        if (count > 10000) {
-            count = 10000
-        }
-        resSlider.setValue(count);
+        label.setText("" + Math.floor(ReValue));
         
-    }).size(50,50).padLeft(5)
+        }).width(300).get()
+        
+        sl.buttons.button(Icon.add,  () => {
+            
+            var count = resSlider.getValue()
+            count +=100 
+            if (count > 10000) {
+                count = 10000
+            }
+            resSlider.setValue(count);
+            
+        }).size(50,50).padLeft(5)
+        
+        sl.buttons.row()
+        
+    })
     
-    res.buttons.row()
-
-    res.buttons.button("close", () => { res.hide() }).size(150, 60).colspan(4).padBottom(20)
+        res.buttons.button("close", () => { res.hide() }).size(150, 60).colspan(4).padBottom(20)
     
     //cont
     
