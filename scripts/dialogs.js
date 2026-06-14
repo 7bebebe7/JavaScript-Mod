@@ -141,7 +141,9 @@ function DevMenu() {
 function Resources() {
     const res = new BaseDialog("Resources");
     
-    let label = res.cont.add("0").center().get().row();
+    let label = res.cont.add("0").center().get()
+    
+    res.cont.row();
     
     res.cont.slider(-10000, 10000, 1, 0, ReValue => {
         
