@@ -145,7 +145,7 @@ function Resources() {
     
     res.cont.row();
     
-    res.cont.button(Icon.cancel,  () => { slider.setValue(slider.getValue() - 10) }).size(50,50).padRight(5)
+    res.cont.button(Icon.cancel,  () => { }).size(50,50).padRight(5)
     
     var resSlider
     
@@ -155,9 +155,18 @@ function Resources() {
     
     label.setText("" + Math.floor(ReValue));
     
-    }).width(300);
+    }).width(300).get()
     
-    res.cont.button(Icon.add,  () => { slider.setValue(slider.getValue() + 10) }).size(50,50).padLeft(5)
+    res.cont.button(Icon.add,  () => {
+        
+        var count = resSlider.getValue()
+        count +=100 
+        if (count > 1000) {
+            count = 1000
+        }
+        slider.setValue(value);
+        
+    }).size(50,50).padLeft(5)
 
     res.buttons.button("close", () => { res.hide() }).size(150, 60).padBottom(20)
     
