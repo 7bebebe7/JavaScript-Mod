@@ -132,13 +132,23 @@ function blockmenu() {
 function DevMenu() {
    const DM = new BaseDialog("Dev Menu");
    DM.buttons.button("close", () => { DM.hide() }).size(150, 60).padBottom(20)
-   DM.cont.button(Icon.file, () => {
-       let core = Vars.player.team().core();
-       if(core != null){
-           core.items.add(Items.copper, 100);
-       }
-   }).size(100, 100).pad(10)
+   DM.cont.button(Icon.item, () => { Resources() }).size(50, 50).pad(10)
    DM.show()
+}
+
+//Dev Menu/Resources-----------------------------------------------------------------------
+
+function Resources() {
+    const res = new BaseDialog("Resources");
+    
+    res.cont.slider(-10000, 10000, 1, 0, ReValue => {
+        
+    print("Значение: " + ReValue);
+    
+    }).width(300);
+
+    res.buttons.button("close", () => { res.hide() }).size(150, 60).padBottom(20)
+    
 }
 
 //setting apply-----------------------------------------------------------------------
@@ -146,8 +156,8 @@ function DevMenu() {
 function SetApl() {
     const SA = new BaseDialog("exit game?");
     SA.cont.add("[red]restart the game to apply the changes?").row()
-    SA.cont.button("No thanks", () => { SA.hide() }).size(120, 40).row()
-    SA.cont.button("Ok", () => { Packages.arc.Core.app.exit() }).size(120, 40)
+    SA.cont.button("No thanks", () => { SA.hide() }).size(140, 60).row()
+    SA.cont.button("Ok", () => { Packages.arc.Core.app.exit() }).size(140, 60)
     SA.show()
 }
 
