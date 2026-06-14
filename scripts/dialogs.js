@@ -146,7 +146,7 @@ function Resources() {
     //buttons
     res.cont.pane(sl => {
         
-        sl.buttons.button(Icon.cancel,  () => {
+        sl.button(Icon.cancel,  () => {
             
             var count = resSlider.getValue()
             count -=100 
@@ -159,7 +159,7 @@ function Resources() {
         
         var resSlider
         
-        resSlider = sl.buttons.slider(-10000, 10000, 1, 0, ReValue => {
+        resSlider = sl.slider(-10000, 10000, 1, 0, ReValue => {
             
         print("Значение: " + ReValue);
         
@@ -167,7 +167,7 @@ function Resources() {
         
         }).width(300).get()
         
-        sl.buttons.button(Icon.add,  () => {
+        sl.button(Icon.add,  () => {
             
             var count = resSlider.getValue()
             count +=100 
@@ -178,7 +178,7 @@ function Resources() {
             
         }).size(50,50).padLeft(5)
         
-        sl.buttons.row()
+        sl.row()
         
     })
     
