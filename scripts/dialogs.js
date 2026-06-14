@@ -141,11 +141,11 @@ function DevMenu() {
 function Resources() {
     const res = new BaseDialog("Resources");
     
-    let label = res.cont.add("0").center().get()
-    
     res.cont.row();
     
-    res.cont.button(Icon.add,  () => { }).size(50,50).padRight(5)
+    res.cont.button(Icon.cancel,  () => { }).size(50,50).padRight(5)
+    
+    let label = res.cont.add("0").center().get()
     
     var resSlider
     
@@ -156,6 +156,8 @@ function Resources() {
     label.setText("" + Math.floor(ReValue));
     
     }).width(300);
+    
+    res.cont.button(Icon.add,  () => { }).size(50,50).padLeft(5)
 
     res.buttons.button("close", () => { res.hide() }).size(150, 60).padBottom(20)
     
