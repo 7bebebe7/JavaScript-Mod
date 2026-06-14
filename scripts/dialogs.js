@@ -132,7 +132,7 @@ function blockmenu() {
 function DevMenu() {
    const DM = new BaseDialog("Dev Menu");
    DM.buttons.button("close", () => { DM.hide() }).size(150, 60).padBottom(20)
-   DM.cont.button(Icon.production, () => { Resources() }).size(50, 50).pad(10)
+   DM.cont.button(Icon.production, () => { Resources() }).size(60, 60).pad(10)
    DM.show()
 }
 
@@ -141,9 +141,13 @@ function DevMenu() {
 function Resources() {
     const res = new BaseDialog("Resources");
     
+    let label = res.cont.add("0").center().get();
+    
     res.cont.slider(-10000, 10000, 1, 0, ReValue => {
         
     print("Значение: " + ReValue);
+    
+    label.setText("" + Math.floor(ReValue));
     
     }).width(300);
 
