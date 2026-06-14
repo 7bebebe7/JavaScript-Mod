@@ -145,7 +145,11 @@ function Resources() {
     
     res.cont.row();
     
-    res.cont.slider(-10000, 10000, 1, 0, ReValue => {
+    res.cont.button(Icon.add,  () => { }).size(50,50).padRight(5)
+    
+    var resSlider
+    
+    resSlider = res.cont.slider(-10000, 10000, 1, 0, ReValue => {
         
     print("Значение: " + ReValue);
     
