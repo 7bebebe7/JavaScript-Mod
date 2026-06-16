@@ -141,11 +141,6 @@ function DevMenu() {
 function Resources() {
     const res = new BaseDialog("Resources");
     
-    let label = res.cont.add("0").colspan(3).center().get();
-    res.cont.row()
-    
-    //buttons
-    
     res.cont.pane(l => {
         
         l.button(new TextureRegionDrawable(Items.copper.uiIcon), () => { 
@@ -156,6 +151,9 @@ function Resources() {
         }).size(60, 60)
         
     }).row()
+    
+    let label = res.cont.add("0").colspan(3).center().get();
+    res.cont.row()
     
     res.cont.button(Icon.cancel,  () => {
         
