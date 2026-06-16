@@ -145,7 +145,18 @@ function Resources() {
     
     //buttons
     
-    res.buttons.button(Icon.cancel,  () => {
+    res.cont.pane(l => {
+        
+        l.button(new TextureRegionDrawable(Items.copper.uiIcon), () => { 
+            
+            let IC = resSlider.getValue()
+            Vars.player.team().core().items.add(Items.copper, IC)
+            
+        }).size(60, 60)
+        
+    })
+    
+    res.cont.button(Icon.cancel,  () => {
         
         var count = resSlider.getValue()
         count -=100 
@@ -158,7 +169,7 @@ function Resources() {
     
     var resSlider
     
-    resSlider = res.buttons.slider(-10000, 10000, 1, 0, ReValue => {
+    resSlider = res.cont.slider(-10000, 10000, 1, 0, ReValue => {
         
     print("Значение: " + ReValue);
     
@@ -166,7 +177,7 @@ function Resources() {
     
     }).width(300).get()
     
-    res.buttons.button(Icon.add,  () => {
+    res.cont.button(Icon.add,  () => {
         
         var count = resSlider.getValue()
         count +=100 
@@ -175,24 +186,9 @@ function Resources() {
         }
         resSlider.setValue(count);
         
-    }).size(50,50).padLeft(5)
-    
-    res.buttons.row()
+    }).size(50,50).padLeft(5).row()
 
     res.buttons.button("close", () => { res.hide() }).size(150, 60).padBottom(20)
-    
-    //cont
-    
-    res.cont.pane(l => {
-        
-        l.button(new TextureRegionDrawable(Items.copper.uiIcon), () => { 
-            
-            let IC = resSlider.getValue()
-            Vars.player.team().core().items.add(Items.copper, IC)
-            
-        }).size(60, 60)
-        
-    })
     
     res.show()
     
