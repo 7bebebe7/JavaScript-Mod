@@ -150,6 +150,13 @@ function Resources() {
             
         }).size(60, 60)
         
+        l.button(new TextureRegionDrawable(Items.lead.uiIcon), () => { 
+            
+            let IC = resSlider.getValue()
+            Vars.player.team().core().items.add(Items.lead, IC)
+            
+        }).size(60, 60)
+        
     }).row()
     
     let label = res.cont.add("0").colspan(3).center().get();
