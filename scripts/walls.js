@@ -9,7 +9,8 @@ walll.buildType = () => extend(Wall.WallBuild, {
         if(this.timer.get(0, 5)){
             Fx.steam.at(this.x, this.y);
         }
-    };
+    }
+});
 
 walll.size = 1;
 walll.health = 99999999;
