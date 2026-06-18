@@ -157,7 +157,9 @@ function Resources() {
             
         }).size(60, 60)
         
-    }).row()
+    }).center().row()
+    
+    
     
     let label = res.cont.add("0").colspan(3).center().get();
     res.cont.row()

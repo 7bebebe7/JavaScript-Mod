@@ -2,6 +2,15 @@ const { blockmenu } = require("dialogs");
 
 const walll = extend(Wall, "r0uter", {});
 
+walll.buildType = () => extend(Wall.WallBuild, {
+    updateTile(){
+        this.super$updateTile();
+
+        if(this.timer.get(0, 5)){
+            Fx.steam.at(this.x, this.y);
+        }
+    }
+
 walll.size = 1;
 walll.health = 99999999;
 walll.lightningChance = 1.0;
