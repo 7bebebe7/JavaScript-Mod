@@ -120,3 +120,14 @@ const PW = extend(Wall, "purple-wall", {
         Items.titanium, 5,
     ),
 });
+
+PW.buildType = () => extend(Wall.WallBuild, {
+    updateTile(){
+        this.super$updateTile();
+
+        // каждые 10 тиков
+        if(this.timer.get(0, 10)){
+            Fx.steam.at(this.x, this.y);
+        }
+    }
+});
