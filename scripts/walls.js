@@ -117,17 +117,16 @@ const PW = extend(Wall, "purple-wall", {
     buildVisibility: BuildVisibility.shown,
     requirements: ItemStack.with(
         Items.thorium, 10,
-        Items.titanium, 5,
+        Items.titanium, 5
     ),
-});
 
-PW.buildType = () => extend(Wall.WallBuild, {
-    updateTile(){
-        this.super$updateTile();
+    buildType: () => extend(Wall.WallBuild, {
+        updateTile(){
+            this.super$updateTile();
 
-        // каждые 10 тиков
-        if(this.timer.get(0, 10)){
-            Fx.steam.at(this.x, this.y);
+            if(this.timer.get(0, 10)){
+                Fx.steam.at(this.x, this.y);
+            }
         }
-    }
+    })
 });
