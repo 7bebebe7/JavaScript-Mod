@@ -67,7 +67,7 @@ const PWE = extend(ExplosionEffect, {
   sparkColor: Color.valueOf("b82bff"),
   waveColor: Color.valueOf("cd69ff"),
   waveStroke: 2,
-  waveRad: 40,
+  waveRad: 20,
   lifetime: 30,
   waveLife: 30,
   sparks: 0,
