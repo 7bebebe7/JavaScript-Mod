@@ -109,3 +109,14 @@ menu.buildType = () => extend(Building, {
     },
 });
 
+const PW = extend(Wall, "purple-wall", {
+    size: 1,
+    health: 1500,
+    armor: 3,
+    category: Category.walls,
+    buildVisibility: BuildVisibility.shown,
+    requirements: ItemStack.with(
+        Item.thorium, 10,
+        Item.titanium, 5,
+    ),
+});
