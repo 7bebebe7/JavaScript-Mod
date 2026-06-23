@@ -119,14 +119,15 @@ const PW = extend(Wall, "purple-wall", {
         Items.thorium, 10,
         Items.titanium, 5
     ),
+    update: true
+});
 
-    buildType: () => extend(Wall.WallBuild, {
-        updateTile(){
-            this.super$updateTile();
+PW.buildType = () => extend(Wall.WallBuild, {
+    updateTile(){
+        this.super$updateTile();
 
-            if(this.timer.get(0, 10)){
-                Fx.steam.at(this.x, this.y);
-            }
+        if(this.timer.get(0, 60)){
+            Fx.steam.at(this.x, this.y);
         }
-    })
+    }
 });
