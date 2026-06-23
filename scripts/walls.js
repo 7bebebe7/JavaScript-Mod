@@ -113,7 +113,7 @@ const PW = extend(Wall, "purple-wall", {
     size: 1,
     health: 1500,
     armor: 3,
-    category: Category.walls,
+    category: Category.defense,
     buildVisibility: BuildVisibility.shown,
     requirements: ItemStack.with(
         Item.thorium, 10,
