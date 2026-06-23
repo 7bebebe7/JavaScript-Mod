@@ -64,11 +64,14 @@ const GB = extend(ExplosionEffect, {
 const PWE = extend(ExplosionEffect, {
 
   smokeColor: Color.valueOf("e9bdff"),
-  sparkColor: Color.valueOf("00ff77"),
-  waveColor: Color.valueOf("b82bff"),
-  waveStroke: 1,
-  waveRad: 16,
+  sparkColor: Color.valueOf("b82bff"),
+  waveColor: Color.valueOf("cd69ff"),
+  waveStroke: 2,
+  waveRad: 40,
   lifetime: 30,
+  waveLife: 30,
+  sparks: 0,
+  smokes: 0,
 });
 
 module.exports = {
