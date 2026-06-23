@@ -122,11 +122,13 @@ const PW = extend(Wall, "purple-wall", {
     update: true
 });
 
-PW.buildType = () => extend(Wall.WallBuild, {
+PW.buildType = () => extend(Wall.WallBuild, PW, {
+    timerEffect: new Interval(1),
+
     updateTile(){
         this.super$updateTile();
 
-        if(this.timer.get(0, 60)){
+        if(this.timerEffect.get(0, 60)){
             Fx.steam.at(this.x, this.y);
         }
     }
