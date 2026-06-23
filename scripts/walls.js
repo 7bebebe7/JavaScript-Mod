@@ -1,4 +1,5 @@
 const { blockmenu } = require("dialogs");
+const { PWE } = require("particles");
 
 const walll = extend(Wall, "r0uter", {});
 
@@ -129,7 +130,7 @@ PW.buildType = () => extend(Wall.WallBuild, PW, {
         this.super$updateTile();
 
         if(this.timerEffect.get(0, 60)){
-            Fx.steam.at(this.x, this.y);
+            PWE.at(this.x, this.y);
         }
     }
 });

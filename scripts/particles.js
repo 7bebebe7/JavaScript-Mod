@@ -59,7 +59,17 @@ const GB = extend(ExplosionEffect, {
   waveStroke: 2,
   waveRad: 40,
   lifetime: 40,
-  });
+});
+
+const PWE = extend(ExplosionEffect, {
+
+  smokeColor: Color.valueOf("e9bdff"),
+  sparkColor: Color.valueOf("00ff77"),
+  waveColor: Color.valueOf("b82bff"),
+  waveStroke: 1,
+  waveRad: 16,
+  lifetime: 30,
+});
 
 module.exports = {
    massr: massr,
@@ -67,4 +77,5 @@ module.exports = {
    blue: blue,
    trail: trail,
    GB: GB,
+   PWE: PWE,
 }
