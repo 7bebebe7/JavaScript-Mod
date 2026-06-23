@@ -116,7 +116,7 @@ const PW = extend(Wall, "purple-wall", {
     category: Category.defense,
     buildVisibility: BuildVisibility.shown,
     requirements: ItemStack.with(
-        Item.thorium, 10,
-        Item.titanium, 5,
+        Items.thorium, 10,
+        Items.titanium, 5,
     ),
 });
