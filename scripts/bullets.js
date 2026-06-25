@@ -50,16 +50,16 @@ const emp = extend(EmpBulletType, {
 });
 
 const mega = extend(BasicBulletType, {
-   mega.speed: 999,
-   mega.damage: 99999,
-   mega.homingPower: 10,
-   mega.width: 1,
-   mega.height: 1,
-   mega.unitDamageScl: 10.0,
-   mega.status: StatusEffects.boss,
-   mega.statusDuration: 9999,
-   mega.lifetime: 9999,
-   mega.knockback: 999
+   speed: 999,
+   damage: 99999,
+   homingPower: 10,
+   width: 1,
+   height: 1,
+   unitDamageScl: 10.0,
+   status: StatusEffects.boss,
+   statusDuration: 9999,
+   lifetime: 9999,
+   knockback: 999
 });
 
 //export-----
