@@ -1,4 +1,4 @@
-//базові налаштування
+//base
 type: UnitAssembler
 size: 3
 category: units
@@ -7,28 +7,23 @@ requirements: [
   graphite/550
   phase-fabric/200
 ]
-
-//специфічні налаштування
 areaSize: 9
 
-//налаштування збірочних дронів
+//drone settings 
 droneType: assembly-drone
 dronesCreated: 4
 droneConstructTime: 180
 
-//плани збірки
+//plans
 plans: [
   {
     type: AssemblerUnitPlan
-
     unit: fortress
-
     requirements: [
       plastanium-wall-large/2
       salvo/2
       mace/1
     ]
-
     time: 1000
   }
 ]

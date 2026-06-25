@@ -1,16 +1,4 @@
 type: Constructor
-description: 
-'''
-  Recipes: 
-    - copper wall  
-    - titanium wall  
-    - plastanium wall  
-    - thorium wall  
-    - phase wall
-    - surge wall
-    - scrap wall
-    - door
-''' 
 size: 2
 category: units
 requirements: [

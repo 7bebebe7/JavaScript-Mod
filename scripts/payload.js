@@ -1,39 +1,30 @@
+//import-----
+
 const { massr, massS } = require("particles");
 
-const myDriver = extend(PayloadMassDriver, "pmd", {});
-
+//sounds-----
 const shoot = Vars.tree.loadSound("pmd-s");
 
-// характеристики
-myDriver.health = 2500;
-myDriver.size = 3;
-myDriver.range = 600;
-myDriver.reload = 120;
-myDriver.chargeTime = 80;
-myDriver.maxPayloadSize = 4;
-myDriver.shake = 10;
-myDriver.knockback = 10;
-myDriver.chargeTime = 50
-
-// потребності(енка або жижа, предмет)
-myDriver.consumePower(5);
-
-// побудова
-myDriver.requirements = ItemStack.with(
-    Items.copper, 300,
+//code-----
+const myDriver = extend(PayloadMassDriver, "pmd", {
+    health: 2500,
+    size: 3,
+    range: 600,
+    reload: 120,
+    maxPayloadSize: 4,
+    shake: 10,
+    knockback: 10,
+    chargeTime: 50,
+    category: Category.units,
+    shootSound: shoot,
+    shootEffect: massS,
+    smokeEffect: massr,
+    receiveEffect: massr,
+    requirements: ItemStack.with(
+        Items.copper, 300,
     Items.lead, 250,
     Items.silicon, 200,
     Items.titanium, 150
-);
-
-//звук вистріла
-myDriver.shootSound = shoot;
-myDriver.shootEffect = massS
-myDriver.smokeEffect = massr;
-myDriver.receiveEffect = massr;
-
-// категория
-myDriver.category = Category.units;
-
-// видимость
-myDriver.buildVisibility = BuildVisibility.shown;
+    )
+});
+myDriver.consumePower(5);
