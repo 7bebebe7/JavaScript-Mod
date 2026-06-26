@@ -10,6 +10,7 @@ const t = extend(ItemTurret, "tur", {
     reload: 30,
     range: 140,
     category: Category.turret,
+    buildVisibility: BuildVisibility.shown,
     requirements: ItemStack.with(
         Items.copper, 35
     )
@@ -22,6 +23,7 @@ const sen = extend(ItemTurret, "sentry", {
     range: 350,
     reload: 120,
     category: Category.turret,
+    buildVisibility: BuildVisibility.shown,
     requirements: ItemStack.with(
         Items.copper, 35
     )
@@ -35,6 +37,7 @@ const dtek = extend(ItemTurret, "dtek", {
     reload: 180,
     shootEffect: GB,
     category: Category.turret,
+    buildVisibility: BuildVisibility.shown,
     requirements: ItemStack.with(
         Items.phaseFabric, 3000
     )
@@ -49,6 +52,7 @@ const xy = extend(ItemTurret, "xyeta", {
     reload: 999999,
     trackingRange: 100,
     category: Category.turret,
+    buildVisibility: BuildVisibility.shown,
     requirements: ItemStack.with(
         Items.copper, 1000,
         Items.lead, 2000,
@@ -65,6 +69,7 @@ const xyi = extend(ItemTurret, "xyetaII", {
     reload: 999999,
     trackingRange: 100,
     category: Category.turret,
+    buildVisibility: BuildVisibility.shown,
     requirements: ItemStack.with(
         Items.copper, 1000,
         Items.lead, 2000,
@@ -78,6 +83,7 @@ const dod = extend(LiquidTurret, "dod", {
     size: 1,
     health: 555,
     category: Category.turret,
+    buildVisibility: BuildVisibility.shown,
     requirements: ItemStack.with(
         Items.copper, 100,
         Items.graphite, 200

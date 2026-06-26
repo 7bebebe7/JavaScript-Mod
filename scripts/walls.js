@@ -13,6 +13,7 @@ const walll = extend(Wall, "r0uter", {
     lightningDamage: 2000,
     lightningLength: 100,
     category: Category.defense,
+    buildVisibility: BuildVisibility.shown,
     requirements: ItemStack.with(
         Items.copper, 15,
         Items.titanium, 10
@@ -29,12 +30,14 @@ const v1 = extend(Wall, "feedbacker", {
     deflectSound: Vars.tree.loadSound("paryy"),
     requirements: ItemStack.with( Items.titanium, 100 ),
     category: Category.defense
+    buildVisibility: BuildVisibility.shown,
 });
 
 const vw = extend(Wall, "VarWall", {
     size: 1,
     health: 3000,
     category: Category.defense,
+    buildVisibility: BuildVisibility.shown,
     requirements: ItemStack.with(
         Items.copper, 15,
         Items.titanium, 10
@@ -48,6 +51,7 @@ const insp = extend(Wall, "Inspector", {
     size: 1,
     health: 1,
     category: Category.defense,
+    buildVisibility: BuildVisibility.shown,
     requirements: ItemStack.with(
         Items.copper, 1,
         Items.titanium, 1
@@ -65,6 +69,7 @@ const menu = extend(Wall, "menu", {
    size: 1,
    health: 9000,
    category: Category.defense,
+   buildVisibility: BuildVisibility.shown,
    requirements: ItemStack.with(
         Items.copper, 1,
         Items.titanium, 1
@@ -84,6 +89,7 @@ const PW = extend(Wall, "purple-wall", {
     health: 1500,
     armor: 3,
     category: Category.defense,
+    buildVisibility: BuildVisibility.shown,
     requirements: ItemStack.with(
         Items.thorium, 10,
         Items.titanium, 5
@@ -106,6 +112,7 @@ const PWL = extend(Wall, "purple-wall-large", {
     health: 3000,
     armor: 6,
     category: Category.defense,
+    buildVisibility: BuildVisibility.shown,
     update: true,
     requirements: ItemStack.with(
         Items.thorium, 20,
