@@ -29,7 +29,7 @@ const v1 = extend(Wall, "feedbacker", {
     chanceDeflect: 10.0,
     deflectSound: Vars.tree.loadSound("paryy"),
     requirements: ItemStack.with( Items.titanium, 100 ),
-    category: Category.defense
+    category: Category.defense,
     buildVisibility: BuildVisibility.shown,
 });
 
