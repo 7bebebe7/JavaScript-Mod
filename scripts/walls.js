@@ -109,8 +109,8 @@ const PWL = extend(Wall, "purple-wall-large", {
     requirements: ItemStack.with(
         Items.thorium, 20,
         Items.titanium, 15
-    ),
-})
+    )
+});
 
 //other function-----
 
