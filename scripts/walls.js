@@ -84,14 +84,12 @@ const PW = extend(Wall, "purple-wall", {
     health: 1500,
     armor: 3,
     category: Category.defense,
-    buildVisibility: BuildVisibility.shown,
     requirements: ItemStack.with(
         Items.thorium, 10,
         Items.titanium, 5
     ),
     update: true
 });
-
 PW.buildType = () => extend(Wall.WallBuild, PW, {
     timerEffect: new Interval(1),
 
@@ -103,7 +101,16 @@ PW.buildType = () => extend(Wall.WallBuild, PW, {
     }
 });
 
-
+const PWL = extend(Wall, "purple-wall-large", {
+    size: 2,
+    health: 3000,
+    armor: 6,
+    category: Category.defense,
+    requirements: ItemStack.with(
+        Items.thorium, 20,
+        Items.titanium, 15
+    ),
+})
 
 //other function-----
 
