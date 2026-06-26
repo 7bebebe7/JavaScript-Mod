@@ -106,9 +106,10 @@ const PWL = extend(Wall, "purple-wall-large", {
     health: 3000,
     armor: 6,
     category: Category.defense,
+    update: true,
     requirements: ItemStack.with(
         Items.thorium, 20,
-        Items.titanium, 15
+        Items.titanium, 10
     )
 });
 
