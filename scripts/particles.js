@@ -66,7 +66,7 @@ const PWE = extend(ExplosionEffect, {
 
 const CC = new Effect(60, e => {
     Angles.randLenVectors(
-        e.id,
+        e.id + 1,
         5,
         30,
         (x, y) => {
@@ -79,7 +79,7 @@ const CC = new Effect(60, e => {
         }
     );
     Angles.randLenVectors(
-        e.id,
+        e.id + 2,
         5,
         30,
         (x, y) => {
@@ -92,7 +92,7 @@ const CC = new Effect(60, e => {
         }
     );
     Angles.randLenVectors(
-        e.id,
+        e.id + 3,
         5,
         30,
         (x, y) => {
@@ -105,7 +105,7 @@ const CC = new Effect(60, e => {
         }
     );
     Angles.randLenVectors(
-        e.id,
+        e.id + 4,
         5,
         30,
         (x, y) => {
