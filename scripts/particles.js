@@ -65,17 +65,55 @@ const PWE = extend(ExplosionEffect, {
 });
 
 const CC = new Effect(60, e => {
-    Draw.color(Color.purple);
-
     Angles.randLenVectors(
         e.id,
-        20,
+        5,
         30,
         (x, y) => {
+            Draw.color(Color.purple);
             Fill.circle(
                 e.x + x,
                 e.y + y,
-                10 * e.fin() * e.fout()
+                7 * e.fin() * e.fout()
+            );
+        }
+    );
+    Angles.randLenVectors(
+        e.id,
+        5,
+        30,
+        (x, y) => {
+            Draw.color(Color.pink);
+            Fill.circle(
+                e.x + x,
+                e.y + y,
+                7 * e.fin() * e.fout()
+            );
+        }
+    );
+    Angles.randLenVectors(
+        e.id,
+        5,
+        30,
+        (x, y) => {
+            Draw.color(Color.red);
+            Fill.circle(
+                e.x + x,
+                e.y + y,
+                7 * e.fin() * e.fout()
+            );
+        }
+    );
+    Angles.randLenVectors(
+        e.id,
+        5,
+        30,
+        (x, y) => {
+            Draw.color(Color.blue);
+            Fill.circle(
+                e.x + x,
+                e.y + y,
+                7 * e.fin() * e.fout()
             );
         }
     );
