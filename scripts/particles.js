@@ -69,13 +69,13 @@ const CC = new Effect(60, e => {
 
     Angles.randLenVectors(
         e.id,
-        5,
+        20,
         30,
         (x, y) => {
             Fill.circle(
                 e.x + x,
                 e.y + y,
-                2 * e.fin() * e.fout()
+                10 * e.fin() * e.fout()
             );
         }
     );
