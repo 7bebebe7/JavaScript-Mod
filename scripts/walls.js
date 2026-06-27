@@ -1,7 +1,7 @@
 //import-----
 
 const { blockmenu } = require("dialogs");
-const { PWE } = require("particles");
+const { PWE, CC } = require("particles");
 
 
 //walls-----
@@ -118,6 +118,16 @@ const PWL = extend(Wall, "purple-wall-large", {
         Items.thorium, 20,
         Items.titanium, 10
     )
+});
+PWL.buildType = () => extend(Wall.WallBuild, PWL, {
+    timerEffect: new Interval(1),
+
+    updateTile(){
+        this.super$updateTile();
+        if(this.timerEffect.get(0, 60)){
+            CC.at(this.x, this.y);
+        }
+    }
 });
 
 //other function-----
