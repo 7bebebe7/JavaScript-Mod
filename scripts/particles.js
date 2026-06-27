@@ -91,4 +91,5 @@ module.exports = {
    trail: trail,
    GB: GB,
    PWE: PWE,
+   CC: CC,
 }
