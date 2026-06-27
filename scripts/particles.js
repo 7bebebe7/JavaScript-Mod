@@ -64,6 +64,24 @@ const PWE = extend(ExplosionEffect, {
   smokes: 0
 });
 
+const CC = new Effect(60, e => {
+    Draw.color(Color.yellow);
+
+    Angles.randLenVectors(
+        e.id,
+        20,
+        40,
+        (x, y) => {
+            Fill.circle(
+                e.x + x,
+                e.y + y,
+                2 * e.fout()
+            );
+        }
+    );
+});
+    
+
 //export-----
 
 module.exports = {
