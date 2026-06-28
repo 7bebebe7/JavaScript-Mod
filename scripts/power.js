@@ -1,7 +1,7 @@
 //import-----
 
 //code-----
-const PEGS = new Sound("Eplace")
+const PEGS = Vars.tree.loadSound("Eplace");
 
 
 const EG = extend(PowerSource, "electric-generator", {

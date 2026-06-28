@@ -22,9 +22,9 @@ const myDriver = extend(PayloadMassDriver, "pmd", {
     receiveEffect: massr,
     requirements: ItemStack.with(
         Items.copper, 300,
-    Items.lead, 250,
-    Items.silicon, 200,
-    Items.titanium, 150
+        Items.lead, 250,
+        Items.silicon, 200,
+        Items.titanium, 150
     )
 });
 myDriver.consumePower(5);
