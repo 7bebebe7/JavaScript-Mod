@@ -68,10 +68,10 @@ const CC = new Effect(60, e => {
     let i = 0;
 
     const colors = [
-        Color.purple,
-        Color.pink,
-        Color.red,
-        Color.blue
+        Color.valueOf("ab34eb"),
+        Color.valueOf("#a50cf7"),
+        Color.valueOf("#872cb8"),
+        Color.valueOf("#a86bc9"),
     ];
 
     Angles.randLenVectors(e.id, 20, 30, (x, y) => {
