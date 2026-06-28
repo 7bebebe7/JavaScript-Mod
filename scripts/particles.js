@@ -65,15 +65,16 @@ const PWE = extend(ExplosionEffect, {
 });
 
 const CC = new Effect(60, e => {
-    const i = 0;
+    let i = 0;
+
     const colors = [
-    Color.purple,
-    Color.pink,
-    Color.red,
-    Color.blue
+        Color.purple,
+        Color.pink,
+        Color.red,
+        Color.blue
     ];
 
-    Angles.randLenVectors(e.id, 5, 30, (x, y, i) => {
+    Angles.randLenVectors(e.id, 20, 30, (x, y) => {
         Draw.color(colors[i % colors.length]);
 
         Fill.circle(
@@ -81,8 +82,9 @@ const CC = new Effect(60, e => {
             e.y + y,
             7 * e.fin() * e.fout()
         );
+
+        i++;
     });
-    i++;
 });
     
 
