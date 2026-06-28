@@ -82,6 +82,7 @@ const CC = new Effect(60, e => {
             7 * e.fin() * e.fout()
         );
     });
+    i++;
 });
     
 
