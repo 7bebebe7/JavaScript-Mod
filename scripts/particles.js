@@ -65,6 +65,7 @@ const PWE = extend(ExplosionEffect, {
 });
 
 const CC = new Effect(60, e => {
+    const i = 0;
     const colors = [
     Color.purple,
     Color.pink,
