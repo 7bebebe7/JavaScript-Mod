@@ -74,7 +74,7 @@ const CC = new Effect(60, e => {
         Color.valueOf("#a86bc9"),
     ];
 
-    Angles.randLenVectors(e.id, 20, 30, (x, y) => {
+    Angles.randLenVectors(e.id, 5, 30, (x, y) => {
         Draw.color(colors[i % colors.length]);
 
         Fill.circle(
