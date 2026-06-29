@@ -24,14 +24,13 @@ const EG = extend(PowerSource, "electric-generator", {
   autolink: false,
   laserColor2: Color.valueOf("DAA520FF")
 });
-EG.buildType = () => extend(PowerSource.PowerSourceBuild, EG, {
+EG.buildType = () => extend(PowerSource.PowerBuild, EG, {
     value: 50,
 
     buildConfiguration(table){
         const v = this.value ?? 50;
         table.slider(0, 100, 1, v, v => {
             this.value = v;
-            this.configure(v);
         });
     },
 
