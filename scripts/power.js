@@ -32,7 +32,8 @@ EG.buildType = () => extend(PowerSource.PowerSourceBuild, EG, {
             this.value = v;
         });
         table.button(Icon.warning, Styles.clearTogglei, run(() => {
-            Damage.dynamicExplosion(this.x, this.y, 30, 200);
+            this.damage(this.health);
+            Fx.blastExplosion.at(this.x, this.y);
             this.kill();
         })).size(40, 40);
     },
