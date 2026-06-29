@@ -65,22 +65,18 @@ const PWE = extend(ExplosionEffect, {
 });
 
 const EGB = extend(ExplosionEffect, {
-    waveColor: Color.valueOf("fcc203"),
-    smokeColor: Color.gray,
-    sparkColor: Color.valueOf("ffda61"),
-    waveLife: 6,
+    lifetime: 30,
     waveStroke: 3,
-    waveRad: 15,
-    waveRadBase: 2,
+    waveRad: 18,
+    waveLife: 6,
+    waveColor: Color.valueOf("fcc203"),
     sparkStroke: 1,
-    sparkRad: 23,
-    sparkLen: 3,
-    sparks: 4,
-    smokeSize: 4,
-    smokeSizeBase: 0.5,
-    smokeRad: 23,
-    smokes: 5,
-    lifetime: 40,
+    sparkRad: 25,
+    sparkLen: 12,
+    sparkColor: Color.valueOf("fff2a8"),
+    smokeSize: 6,
+    smokeSizeBase: 2,
+    smokeColor: Color.valueOf("ffda61")
 });
 
 const CC = new Effect(60, e => {
