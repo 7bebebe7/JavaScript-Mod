@@ -28,15 +28,19 @@ EG.buildType = () => extend(PowerSource.PowerSourceBuild, EG, {
     value: 50,
 
     buildConfiguration(table){
-        table.addSlider(0, 100, 1, this.value, v => {
-            this.configure(Math.floor(v));
+        const v = this.value ?? 50;
+        table.slider(0, 100, 1, v, v => {
+            this.value = v;
+            this.configure(v);
         });
     },
+
     configured(player, value){
         this.super$configured(player, value);
         this.value = value;
-        Log.info("value: " + value)
-    }
+        Log.info("value: @", value);
+    },
+
 });
 
 //othere-----
