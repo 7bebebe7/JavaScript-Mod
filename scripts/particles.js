@@ -116,4 +116,5 @@ module.exports = {
    GB: GB,
    PWE: PWE,
    CC: CC,
+   EGB: EGB,
 }

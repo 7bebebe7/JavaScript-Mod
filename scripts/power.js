@@ -1,5 +1,7 @@
 //import-----
 
+const { EGB } = require("particles");
+
 //code-----
 const PEGS = Vars.tree.loadSound("Eplace");
 
