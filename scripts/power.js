@@ -16,12 +16,26 @@ const EG = extend(PowerSource, "electric-generator", {
     Items.graphite, 120
   ),
   update: true,
+  configurable: true,
   powerProduction: 50,
   placeSound: PEGS,
   laserRange: 35,
   laserScale: 0.75,
   autolink: false,
   laserColor2: Color.valueOf("DAA520FF")
+});
+EG.buildType = () => extend(Building, {
+    value: 50,
+
+    buildConfiguration(table){
+        table.slider(0, 100, 1, this.value, v => {
+            this.configure(Math.floor(v));
+        });
+    },
+    configured(player, value){
+        this.value = value;
+        Log.info("value: " + value)
+    }
 });
 
 //othere-----
