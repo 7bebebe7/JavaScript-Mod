@@ -33,6 +33,7 @@ EG.buildType = () => extend(PowerSource.PowerSourceBuild, EG, {
         });
     },
     configured(player, value){
+        this.super$configured(player, value);
         this.value = value;
         Log.info("value: " + value)
     }
