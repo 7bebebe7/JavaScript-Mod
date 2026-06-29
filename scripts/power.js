@@ -17,7 +17,11 @@ const EG = extend(PowerSource, "electric-generator", {
   ),
   update: true,
   powerProduction: 50,
-  placeSound: PEGS
+  placeSound: PEGS,
+  laserRange: 35,
+  laserScale: 0.75,
+  autolink: false,
+  laserColor2: Color.valueOf("DAA520FF")
 });
 
 //othere-----
