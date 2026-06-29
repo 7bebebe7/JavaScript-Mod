@@ -24,7 +24,7 @@ const EG = extend(PowerSource, "electric-generator", {
   autolink: false,
   laserColor2: Color.valueOf("DAA520FF")
 });
-EG.buildType = () => extend(Building, {
+EG.buildType = () => extend(PowerSource.PowerSourceBuild, EG, {
     value: 50,
 
     buildConfiguration(table){
