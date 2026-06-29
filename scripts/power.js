@@ -29,14 +29,10 @@ EG.buildType = () => extend(PowerSource.PowerSourceBuild, EG, {
 
     buildConfiguration(table){
         table.slider(0, 100, 1, this.value, v => {
-            this.configure(Math.floor(v));
+            this.value = v;
         });
     },
-    configured(player, value){
-        this.super$configured(player, value);
-        this.value = value;
-        Log.info("value: " + value)
-    },
+
     getPowerProduction(){
         return this.value;
     }
