@@ -37,9 +37,8 @@ EG.buildType = () => extend(PowerSource.PowerSourceBuild, EG, {
         this.value = value;
         Log.info("value: " + value)
     },
-    updateTile(){
-        this.super$updateTile();
-        this.powerProduction = this.value;
+    getPowerProduction(){
+        return this.value;
     }
 });
 
