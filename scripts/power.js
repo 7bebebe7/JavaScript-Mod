@@ -32,8 +32,8 @@ EG.buildType = () => extend(PowerSource.PowerSourceBuild, EG, {
             this.value = v;
         });
         table.button(Icon.warning, Styles.clearTogglei, run(() => {
-            blockmenu()
-        }));
+            Log.warn("hi")
+        })).size(40, 40);
     },
 
     getPowerProduction(){
