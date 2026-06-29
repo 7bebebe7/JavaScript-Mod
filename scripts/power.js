@@ -28,7 +28,7 @@ EG.buildType = () => extend(PowerSource.PowerSourceBuild, EG, {
     value: 50,
 
     buildConfiguration(table){
-        table.slider(0, 100, 1, this.value, v => {
+        table.addSlider(0, 100, 1, this.value, v => {
             this.configure(Math.floor(v));
         });
     },
