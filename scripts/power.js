@@ -34,10 +34,10 @@ EG.buildType = () => extend(PowerSource.PowerSourceBuild, EG, {
         table.button(Icon.warning, Styles.clearTogglei, run(() => {
             Fx.reactorExplosion.at(this.x, this.y);
 
-            Damage.damage(this.x, this.y, 500, 9000);
+            Damage.damage(this.x, this.y, 20, 5000);
 
             this.kill();
-        })).size(40, 40);
+        })).size(41, 41);
     },
 
     getPowerProduction(){
