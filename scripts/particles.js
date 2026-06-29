@@ -64,6 +64,24 @@ const PWE = extend(ExplosionEffect, {
   smokes: 0
 });
 
+const EGB = extend(ExplosionEffect, {
+    waveColor = Pal.reactorPurple,
+    smokeColor = Color.gray,
+    sparkColor = Pal.reactorPurple,
+    waveLife = 6,
+    waveStroke = 3,
+    waveRad = 15,
+    waveRadBase = 2,
+    sparkStroke = 1,
+    sparkRad = 23,
+    sparkLen = 3,
+    sparks = 4,
+    smokeSize = 4,
+    smokeSizeBase = 0.5,
+    smokeRad = 23,
+    smokes = 5,
+});
+
 const CC = new Effect(60, e => {
     let i = 0;
 

@@ -41,9 +41,8 @@ EG.buildType = () => extend(PowerSource.PowerSourceBuild, EG, {
     },
     
     onDestroyed() {
-        Fx.reactorExplosion.at(this.x, this.y);
-
-        Damage.damage(this.x, this.y, 160, 3500);
+        EGB.at(this.x, this.y);
+        Damage.damage(this.x, this.y, 160, 3500)
     }
 });
 
