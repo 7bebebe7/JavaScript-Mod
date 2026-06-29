@@ -80,7 +80,6 @@ const EGB = extend(ExplosionEffect, {
     smokeSizeBase: 0.5,
     smokeRad: 23,
     smokes: 5,
-    clip: 100,
 });
 
 const CC = new Effect(60, e => {

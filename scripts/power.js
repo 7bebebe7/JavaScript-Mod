@@ -43,7 +43,7 @@ EG.buildType = () => extend(PowerSource.PowerSourceBuild, EG, {
     },
     
     onDestroyed() {
-        EGB.at(this.x, this.y);
+        massr.at(this.x, this.y);
         Damage.damage(this.x, this.y, 160, 3500)
     }
 });
