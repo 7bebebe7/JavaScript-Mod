@@ -1,6 +1,6 @@
 //import-----
 
-const { EGB, massr } = require("particles");
+const { EGB } = require("particles");
 
 //code-----
 const PEGS = Vars.tree.loadSound("Eplace");
@@ -43,7 +43,7 @@ EG.buildType = () => extend(PowerSource.PowerSourceBuild, EG, {
     },
     
     onDestroyed() {
-        massr.at(this.x, this.y);
+        EGB.at(this.x, this.y);
         Damage.damage(this.x, this.y, 160, 3500)
     }
 });
