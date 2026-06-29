@@ -28,7 +28,7 @@ EG.buildType = () => extend(PowerSource.PowerBuild, EG, {
     value: 50,
 
     buildConfiguration(table){
-        const v = this.value ?? 50;
+        const v = this.value;
         table.slider(0, 100, 1, v, v => {
             this.value = v;
         });
