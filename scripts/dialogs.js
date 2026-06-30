@@ -111,7 +111,7 @@
 function blockmenu() {
     const M = new BaseDialog("hello");
 
-    const field = dialog.cont.field("").get();
+    const field = M.cont.field("").get();
 
     M.cont.button("back", () => {
       
