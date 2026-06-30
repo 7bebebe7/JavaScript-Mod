@@ -73,7 +73,15 @@ const menu = extend(Wall, "menu", {
    requirements: ItemStack.with(
         Items.copper, 1,
         Items.titanium, 1
-    )
+    ),
+    update: function() {
+        if (this.health < 500 && !this.warnedLowHp) {
+            Log.err("warning!");
+            this.warnedLowHp = true;
+        } else if (this.health >= 500) {
+            this.warnedLowHp = false;
+        }
+    }       
 });
 menu.buildType = () => extend(Building, {
     buildConfiguration(table) {
