@@ -60,6 +60,7 @@ const insp = extend(Wall, "Inspector", {
 
 const menu = extend(Wall, "menu", {
    configurable: true,
+   update: true,
     init() {
        this.super$init();
     },
