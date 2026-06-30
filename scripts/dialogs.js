@@ -111,8 +111,13 @@
 function blockmenu() {
     const M = new BaseDialog("hello");
 
-    let num1 = M.cont.add(new TextField("", Styles.defaultField)).width(200).row().get();
-    let num2 = M.cont.add(new TextField("", Styles.defaultField)).width(200).row().get();
+    let num1 = M.cont.add(new TextField("", Styles.defaultField)).width(200).get();
+    
+    M.cont.row();
+    
+    let num2 = M.cont.add(new TextField("", Styles.defaultField)).width(200).get();
+    
+    M.cont.row();
     
     M.buttons.button("back", () => {
       
