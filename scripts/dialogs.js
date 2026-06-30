@@ -165,6 +165,7 @@ function Resources() {
     
     res.cont.pane(l => {
         
+        l.button(new TextureRegionDrawable(Items.copper.uiIcon), () => { 
             
             let IC = resSlider.getValue()
             Vars.player.team().core().items.add(Items.copper, IC)
@@ -178,7 +179,7 @@ function Resources() {
             
         }).size(60, 60)
         
-    }).row();
+    }).row()
     
     let label = res.cont.add("0").colspan(3).center().get();
     res.cont.row()
