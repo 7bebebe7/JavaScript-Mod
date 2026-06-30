@@ -112,10 +112,12 @@ function blockmenu() {
     const M = new BaseDialog("hello");
 
     let num1 = M.cont.add(new TextField("", Styles.defaultField)).width(200).get();
+    num1.setFilter(TextField.TextFieldFilter.digitsOnly);
     
     M.cont.row();
     
     let num2 = M.cont.add(new TextField("", Styles.defaultField)).width(200).get();
+    num2.setFilter(TextField.TextFieldFilter.digitsOnly);
     
     M.cont.row();
     
