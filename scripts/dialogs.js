@@ -111,8 +111,7 @@
 function blockmenu() {
     const M = new BaseDialog("hello");
 
-    const field = new TextField("", Styles.defaultField);
-    field.setFilter(TextField.TextFieldFilter.digitsOnly);
+    M.cont.TextField("", Styles.defaultField);
 
     M.cont.button("back", () => {
       
