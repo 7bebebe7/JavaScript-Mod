@@ -74,14 +74,6 @@ const menu = extend(Wall, "menu", {
         Items.copper, 1,
         Items.titanium, 1
     ),
-    update: function() {
-        if (this.health < 500 && !this.warnedLowHp) {
-            Log.err("warning!");
-            this.warnedLowHp = true;
-        } else if (this.health >= 500) {
-            this.warnedLowHp = false;
-        }
-    }       
 });
 menu.buildType = () => extend(Building, {
     buildConfiguration(table) {
@@ -90,6 +82,15 @@ menu.buildType = () => extend(Building, {
             blockmenu()
         })).size(40);
     },
+    update: function() {
+        this.super$update();
+        if (this.health < 500 && !this.warnedLowHp) {
+            Log.err("warning!");
+            this.warnedLowHp = true;
+        } else if (this.health >= 500) {
+            this.warnedLowHp = false;
+        }
+    }
 });
 
 const PW = extend(Wall, "purple-wall", {
