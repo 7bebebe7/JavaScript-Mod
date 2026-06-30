@@ -129,7 +129,7 @@ function blockmenu() {
         if (num2 == 0) {
             reslabel.setText("null")
         } else {
-            reslabel.setText(num1 / num2)
+            reslabel.setText((num1 / num2).toString())
         }
         
     }).size(60, 60);
