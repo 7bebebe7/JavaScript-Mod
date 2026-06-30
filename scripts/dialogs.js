@@ -111,24 +111,38 @@
 function blockmenu() {
     const M = new BaseDialog("hello");
 
-    let num1 = M.cont.add(new TextField("", Styles.defaultField)).width(200).get();
-    num1.setFilter(TextField.TextFieldFilter.digitsOnly);
+    let label1 = M.cont.add(new TextField("", Styles.defaultField)).width(200).get();
+    label1.setFilter(TextField.TextFieldFilter.digitsOnly);
     
     M.cont.row();
     
-    let num2 = M.cont.add(new TextField("", Styles.defaultField)).width(200).get();
-    num2.setFilter(TextField.TextFieldFilter.digitsOnly);
+    let label2 = M.cont.add(new TextField("", Styles.defaultField)).width(200).get();
+    label2.setFilter(TextField.TextFieldFilter.digitsOnly);
     
     M.cont.row();
+    
+    M.cont.button("÷", () => {
+        
+        let num1 = parseInt(label1.getText());
+        let num2 = parseInt(label2.getText());
+        
+        if (num2 == 0) {
+            reslabel.setText("null")
+        } else {
+            reslabel.setText(num1 / num2)
+        }
+        
+    }).size(60, 60);
+    
+    M.cont.row();
+    
+    let reslabel = M.cont.add(new Label("Result")).width(200).get();
     
     M.buttons.button("back", () => {
       
       M.hide();
       
-      Vars.ui.hudfrag.showToast(
-     Icon.info,
-     "bye!"
-      );
+      Vars.ui.hudfrag.showToast(Icon.info, "bye!");
       
     }).size(210, 64);
 
@@ -151,7 +165,6 @@ function Resources() {
     
     res.cont.pane(l => {
         
-        l.button(new TextureRegionDrawable(Items.copper.uiIcon), () => { 
             
             let IC = resSlider.getValue()
             Vars.player.team().core().items.add(Items.copper, IC)
