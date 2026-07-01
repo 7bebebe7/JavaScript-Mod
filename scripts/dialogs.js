@@ -111,45 +111,18 @@
 function blockmenu() {
     const M = new BaseDialog("hello");
 
-    let label1 = M.cont.add(new TextField("", Styles.defaultField)).width(200).get();
-    label1.setFilter(TextField.TextFieldFilter.digitsOnly);
-    
-    M.cont.row();
-    
-    let label2 = M.cont.add(new TextField("", Styles.defaultField)).width(200).get();
-    label2.setFilter(TextField.TextFieldFilter.digitsOnly);
-    
-    M.cont.row();
-    
     M.cont.button(new TextureRegionDrawable(Core.atlas.find("jsm-calc-icon")), () => {
-        
-            let num1 = parseInt(label1.getText());
-            let num2 = parseInt(label2.getText());
-        
-        if (num2 == 0) {
-            reslabel.setText("null")
-        } else {
-            reslabel.setText((num1 / num2).toString())
-        }
-        
-    }).size(60, 60);
-    
-    M.cont.row();
-    
-    let reslabel = M.cont.add(new Label("Result")).width(200).get();
+        calc()
+    }).size(60,60);
     
     M.buttons.button("back", () => {
-      
-      M.hide();
-      
-      Vars.ui.hudfrag.showToast(Icon.info, "bye!");
-      
+        M.hide();
+        Vars.ui.hudfrag.showToast(Icon.info, "bye!");
     }).size(210, 64);
-
     M.show();
 }
 
-//Dev Menu-----------------------------------------------------------------------
+//Dev Menu-----
 
 function DevMenu() {
    const DM = new BaseDialog("Dev Menu");
@@ -158,7 +131,7 @@ function DevMenu() {
    DM.show()
 }
 
-//Dev Menu/Resources-----------------------------------------------------------------------
+//Dev Menu/Resources-----
 
 function Resources() {
     const res = new BaseDialog("Resources");
@@ -222,7 +195,7 @@ function Resources() {
     
 }
 
-//setting apply-----------------------------------------------------------------------
+//setting apply-----
 
 function SetApl() {
     const SA = new BaseDialog("exit game?");
@@ -232,8 +205,50 @@ function SetApl() {
     SA.show()
 }
 
+//calculator-----
 
-//-----------------------------------------------------------------------
+function calc() {
+    const cal = new BaseDialog("Calculator");
+
+    let label1 = cal.cont.add(new TextField("", Styles.defaultField)).width(200).get();
+    label1.setFilter(TextField.TextFieldFilter.digitsOnly);
+    
+    cal.cont.row();
+    
+    let label2 = cal.cont.add(new TextField("", Styles.defaultField)).width(200).get();
+    label2.setFilter(TextField.TextFieldFilter.digitsOnly);
+    
+    cal.cont.row();
+    
+    cal.cont.button("/"), () => {
+        
+            let num1 = parseInt(label1.getText());
+            let num2 = parseInt(label2.getText());
+        
+        if (num2 == 0) {
+            reslabel.setText("null")
+        } else {
+            reslabel.setText((num1 / num2).toString())
+        };
+        
+    }).size(60, 60);
+    
+    cal.cont.row();
+    
+    let reslabel = cal.cont.add(new Label("Result")).width(200).center().get();
+    
+    cal.buttons.button("back", () => {
+      
+      cal.hide();
+      
+      Vars.ui.hudfrag.showToast(Icon.info, "bye!");
+      
+    }).size(210, 64);
+
+    cal.show();
+}
+
+//export-----
 module.exports = {
    blockmenu: blockmenu,
    DevMenu: DevMenu,
