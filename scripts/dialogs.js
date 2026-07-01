@@ -121,10 +121,10 @@ function blockmenu() {
     
     M.cont.row();
     
-    M.cont.button("÷", () => {
+    M.cont.button(new TextureRegionDrawable(Core.atlas.find("jsm-calc-icon")), () => {
         
-        let num1 = parseInt(label1.getText());
-        let num2 = parseInt(label2.getText());
+            let num1 = parseInt(label1.getText());
+            let num2 = parseInt(label2.getText());
         
         if (num2 == 0) {
             reslabel.setText("null")
