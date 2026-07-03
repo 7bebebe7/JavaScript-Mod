@@ -2,13 +2,6 @@
 
 //distribution-----
 
-const RISBuild = extend(ItemSource.ItemSourceBuild, {
-    placed(){
-        this.super$placed();
-        this.configure(Items.copper);
-    }
-});
-
 const RIS = extend(ItemSource, "random-source", {
   health: 300,
   size: 1,
