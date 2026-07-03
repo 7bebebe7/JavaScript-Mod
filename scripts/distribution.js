@@ -23,6 +23,8 @@ const RIS = extend(ItemSource, "random-source", {
   category: Category.distribution,
 });
 
-RIS.buildType = () => new RISBuild();
+RIS.placed = function(build) {
+  build.configure(Items.copper);
+};
 
 //other
