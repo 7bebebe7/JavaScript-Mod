@@ -106,8 +106,6 @@
           }
         });
         
-        
-        
     function blockmenu() {
         const M = new BaseDialog("hello");
     
@@ -213,30 +211,14 @@
         cal.cont.add("[grey]Number 1").center().row()
         
         let label1 = cal.cont.add(new TextField("", Styles.defaultField)).width(200).get();
-        label1.setFilter(new TextField.TextFieldFilter(function(textField, c) {
-            let text = textField.getText();
-            
-            if (c == '-') {
-                return text.length() == 0;
-            }
-            
-            return Character.isDigit(c);
-        }));
+        label1.setFilter(TextField.TextFieldFilter.digitsOnly);
         
         cal.cont.row();
         
         cal.cont.add("[grey]Number 2").center().padTop(5).row()
         
         let label2 = cal.cont.add(new TextField("", Styles.defaultField)).width(200).get();
-        label1.setFilter(new TextField.TextFieldFilter(function(textField, c) {
-            let text = textField.getText();
-            
-            if (c == '-') {
-                return text.length() == 0;
-            }
-            
-            return Character.isDigit(c);
-        }));
+        label2.setFilter(TextField.TextFieldFilter.digitsOnly);
         
         cal.cont.row();
         
@@ -250,6 +232,15 @@
             } else {
                 reslabel.setText((num1 / num2).toString())
             };
+            
+        }).size(60, 60).padTop(3).padBottom(3);
+        
+        cal.cont.button("+", () => {
+            
+            let num1 = parseInt(label1.getText());
+            let num2 = parseInt(label2.getText());
+            
+            reslabel.setText((num1 + num2).toString())
             
         }).size(60, 60).padTop(3).padBottom(3);
         
