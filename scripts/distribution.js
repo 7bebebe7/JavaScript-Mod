@@ -14,12 +14,14 @@ const RIS = extend(ItemSource, "random-source", {
   ),
   buildVisibility: BuildVisibility.shown,
   category: Category.distribution,
-  
-  placed(tile){
-        this.super$placed(tile);
-        tile.build.configure(Items.copper);
-  },
-  
+});
+
+RIS.buildType = () => extend(ItemSource.ItemSourceBuild, {
+    placed(){
+        this.super$placed();
+
+        this.configure(Items.copper);
+    };
 });
 
 //other
