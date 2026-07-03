@@ -217,7 +217,7 @@
         
         cal.cont.row();
         
-        cal.cont.add("[grey]Number 2").center().row()
+        cal.cont.add("[grey]Number 2").center().padTop(5).row()
         
         let label2 = cal.cont.add(new TextField("", Styles.defaultField)).width(200).get();
         label2.setFilter(TextField.TextFieldFilter.digitsOnly);
@@ -235,11 +235,12 @@
                 reslabel.setText((num1 / num2).toString())
             };
             
-        }).size(60, 60);
+        }).size(60, 60).padTop(3).padBottom(3);
         
         cal.cont.row();
         
         let reslabel = cal.cont.add(new Label("Result")).width(200).center().get();
+        reslabel.setAlignment(Align.center);
         
         cal.buttons.button("back", () => { cal.hide() }).size(210, 64);
     
