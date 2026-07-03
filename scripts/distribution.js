@@ -6,6 +6,7 @@ const RIS = extend(ItemSource, "random-source", {
   health: 300,
   size: 1,
   configurable: false,
+  update: true,
   requirements: ItemStack.with(
     Items.lead, 30,
     Items.graphite, 20,
