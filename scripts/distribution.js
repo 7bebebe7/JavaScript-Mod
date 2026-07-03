@@ -16,8 +16,8 @@ const RIS = extend(ItemSource, "random-source", {
   
   placed(tile){
         this.super$placed(tile);
-        tile.build.outputItem = Items.copper;
-    }
+        tile.build.configure(Items.copper);
+  },
   
 });
 
