@@ -213,14 +213,30 @@
         cal.cont.add("[grey]Number 1").center().row()
         
         let label1 = cal.cont.add(new TextField("", Styles.defaultField)).width(200).get();
-        label1.setFilter(TextField.TextFieldFilter.digitsOnly);
+        label1.setFilter(new TextField.TextFieldFilter(function(textField, c) {
+            let text = textField.getText();
+            
+            if (c == '-') {
+                return text.length() == 0;
+            }
+            
+            return Character.isDigit(c);
+        }));
         
         cal.cont.row();
         
         cal.cont.add("[grey]Number 2").center().padTop(5).row()
         
         let label2 = cal.cont.add(new TextField("", Styles.defaultField)).width(200).get();
-        label2.setFilter(TextField.TextFieldFilter.digitsOnly);
+        label1.setFilter(new TextField.TextFieldFilter(function(textField, c) {
+            let text = textField.getText();
+            
+            if (c == '-') {
+                return text.length() == 0;
+            }
+            
+            return Character.isDigit(c);
+        }));
         
         cal.cont.row();
         
