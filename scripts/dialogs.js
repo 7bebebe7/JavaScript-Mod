@@ -260,6 +260,10 @@
         let reslabel = cal.cont.add(new Label("Result")).width(200).center().get();
         reslabel.setAlignment(Align.center);
         
+        t.button(Icon.copy, Styles.clearNonei, () => {
+            Core.app.setClipboardText(reslabel.getText());
+        }).size(40, 40).padLeft(5);
+        
         cal.buttons.button("back", () => { cal.hide() }).size(210, 64);
     
         cal.show();
