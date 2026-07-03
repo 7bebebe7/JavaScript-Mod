@@ -209,11 +209,15 @@
     
     function calc() {
         const cal = new BaseDialog("Calculator");
-    
+        
+        cal.cont.add("[grey]Number 1").center().row()
+        
         let label1 = cal.cont.add(new TextField("", Styles.defaultField)).width(200).get();
         label1.setFilter(TextField.TextFieldFilter.digitsOnly);
         
         cal.cont.row();
+        
+        cal.cont.add("[grey]Number 2").center().row()
         
         let label2 = cal.cont.add(new TextField("", Styles.defaultField)).width(200).get();
         label2.setFilter(TextField.TextFieldFilter.digitsOnly);
@@ -237,13 +241,7 @@
         
         let reslabel = cal.cont.add(new Label("Result")).width(200).center().get();
         
-        cal.buttons.button("back", () => {
-          
-          cal.hide();
-          
-          Vars.ui.hudfrag.showToast(Icon.info, "bye!");
-          
-        }).size(210, 64);
+        cal.buttons.button("back", () => { cal.hide() }).size(210, 64);
     
         cal.show();
     }
