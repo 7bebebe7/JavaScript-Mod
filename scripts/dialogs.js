@@ -255,6 +255,24 @@
             
         }).size(60, 60).padTop(3).padLeft(5).padRight(5).padBottom(3);
         
+            t.button("*", () => {
+            
+            let num1 = parseInt(label1.getText());
+            let num2 = parseInt(label2.getText());
+            
+            reslabel.setText((num1 * num2).toString())
+            
+        }).size(60, 60).padTop(3).padLeft(5).padRight(5).padBottom(3);
+        
+            t.button("%", () => {
+            
+            let num1 = parseInt(label1.getText());
+            let num2 = parseInt(label2.getText());
+            
+            reslabel.setText((num1 % num2).toString())
+            
+        }).size(60, 60).padTop(3).padLeft(5).padRight(5).padBottom(3);
+        
         })).center().row();
         
         let reslabel = cal.cont.add(new Label("Result")).width(200).center().get();
