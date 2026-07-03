@@ -222,7 +222,7 @@
         
         cal.cont.row();
         
-        cal.cont.table(t => {
+        cal.cont.table(cons(t => {
             
             t.button("/", () => {
             
@@ -246,7 +246,7 @@
             
         }).size(60, 60).padTop(3).padBottom(3);
         
-        }).center().row();
+        })).center().row();
         
         let reslabel = cal.cont.add(new Label("Result")).width(200).center().get();
         reslabel.setAlignment(Align.center);
