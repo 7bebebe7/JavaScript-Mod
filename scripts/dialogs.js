@@ -111,7 +111,19 @@
     
         M.cont.button(new TextureRegionDrawable(Core.atlas.find("jsm-calc-icon")), () => {
             calc()
-        }).size(60,60);
+        }).size(60,60).padLeft(10).padRight(10);
+        
+        M.cont.button( new TextureRegionDrawable(Core.atlas.find("jsm-50-50-icon")), () => {
+            
+            if (Math.random() > 0.5) {
+                Vars.ui.hudfrag.showToast(Icon.ok, "You Vin!");
+            } else {
+                Vars.ui.hudfrag.showToast(Icon.info, "You lost :(");
+                
+                Time.run(60 * 7, () => { Packages.arc.Core.app.exit() });
+            }
+            
+        }).size(64, 64).center().row();
         
         M.buttons.button("back", () => {
             M.hide();
@@ -293,6 +305,8 @@
         cal.show();
     }
     
+
+
     //export-----
     module.exports = {
        blockmenu: blockmenu,
