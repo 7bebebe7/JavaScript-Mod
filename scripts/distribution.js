@@ -1,6 +1,6 @@
 //import-----
 
-//effect-----
+//distribution-----
 
 const RIS = extend(ItemSource, "random-source", {
   health: 300,
@@ -12,7 +12,13 @@ const RIS = extend(ItemSource, "random-source", {
     Items.silicon, 25
   ),
   buildVisibility: BuildVisibility.shown,
-  category: Category.effect,
+  category: Category.distribution,
+  
+  placed(tile){
+        this.super$placed(tile);
+        tile.build.outputItem = Items.copper;
+    }
+  
 });
 
 //other
