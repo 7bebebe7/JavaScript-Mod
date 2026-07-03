@@ -224,19 +224,6 @@
         
         cal.cont.table(cons(t => {
             
-            t.button("/", () => {
-            
-                let num1 = parseInt(label1.getText());
-                let num2 = parseInt(label2.getText());
-            
-            if (num2 == 0) {
-                reslabel.setText("null")
-            } else {
-                reslabel.setText((num1 / num2).toString())
-            };
-            
-        }).size(60, 60).padTop(3).padLeft(5).padRight(5).padBottom(3);
-        
             t.button("+", () => {
             
             let num1 = parseInt(label1.getText());
@@ -264,6 +251,19 @@
             
         }).size(60, 60).padTop(3).padLeft(5).padRight(5).padBottom(3);
         
+            t.button("/", () => {
+            
+                let num1 = parseInt(label1.getText());
+                let num2 = parseInt(label2.getText());
+            
+            if (num2 == 0) {
+                reslabel.setText("null")
+            } else {
+                reslabel.setText((num1 / num2).toString())
+            };
+            
+        }).size(60, 60).padTop(3).padLeft(5).padRight(5).padBottom(3);
+        
             t.button("%", () => {
             
             let num1 = parseInt(label1.getText());
@@ -278,14 +278,18 @@
         let reslabel = cal.cont.add(new Label("Result")).width(200).center().get();
         reslabel.setAlignment(Align.center);
         
-        cal.cont.row();
-        
-        cal.cont.button(Icon.copy, Styles.clearNonei, () => {
-            Core.app.setClipboardText(reslabel.getText());
-        }).size(40, 40).padLeft(5);
+        cal.buttons.button(Icon.none, () => { 
+            
+            label1.setText("");
+            label2.setText("");
+            reslabel.setText("Result");
+            
+        }).size(64, 64).padLeft(5);
         
         cal.buttons.button("back", () => { cal.hide() }).size(210, 64);
-    
+        
+        cal.buttons.button(Icon.copy, () => { Core.app.setClipboardText(reslabel.getText()) }).size(64, 64).padLeft(5);
+        
         cal.show();
     }
     
