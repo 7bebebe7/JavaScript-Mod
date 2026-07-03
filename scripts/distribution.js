@@ -16,12 +16,11 @@ const RIS = extend(ItemSource, "random-source", {
   category: Category.distribution,
 });
 
-RIS.buildType = () => extend(ItemSource.ItemSourceBuild, {
+RIS.buildType = prov(() => new JavaAdapter(ItemSource.ItemSourceBuild, {
     placed(){
         this.super$placed();
-
         this.configure(Items.copper);
     }
-});
+}));
 
 //other
