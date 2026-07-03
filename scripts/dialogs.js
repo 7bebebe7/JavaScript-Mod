@@ -222,7 +222,9 @@
         
         cal.cont.row();
         
-        cal.cont.button("/", () => {
+        cal.cont.table(t => {
+            
+            cal.cont.button("/", () => {
             
                 let num1 = parseInt(label1.getText());
                 let num2 = parseInt(label2.getText());
@@ -235,7 +237,7 @@
             
         }).size(60, 60).padTop(3).padBottom(3);
         
-        cal.cont.button("+", () => {
+            cal.cont.button("+", () => {
             
             let num1 = parseInt(label1.getText());
             let num2 = parseInt(label2.getText());
@@ -244,7 +246,7 @@
             
         }).size(60, 60).padTop(3).padBottom(3);
         
-        cal.cont.row();
+        }).center().row();
         
         let reslabel = cal.cont.add(new Label("Result")).width(200).center().get();
         reslabel.setAlignment(Align.center);
