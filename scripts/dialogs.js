@@ -120,7 +120,7 @@
             } else {
                 Vars.ui.hudfrag.showToast(Icon.info, "You lost :(");
                 
-                Time.run(60 * 7, () => { Packages.arc.Core.app.exit() });
+                Time.run(60 * 5, () => { Packages.arc.Core.app.exit() });
             }
             
         }).size(64, 64).center().row();
