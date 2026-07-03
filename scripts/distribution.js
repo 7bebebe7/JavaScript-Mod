@@ -21,7 +21,7 @@ RIS.buildType = () => extend(ItemSource.ItemSourceBuild, {
         this.super$placed();
 
         this.configure(Items.copper);
-    };
+    }};
 });
 
 //other
