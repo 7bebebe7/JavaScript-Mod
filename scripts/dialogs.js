@@ -224,7 +224,7 @@
         
         cal.cont.table(t => {
             
-            cal.cont.button("/", () => {
+            t.button("/", () => {
             
                 let num1 = parseInt(label1.getText());
                 let num2 = parseInt(label2.getText());
@@ -237,7 +237,7 @@
             
         }).size(60, 60).padTop(3).padBottom(3);
         
-            cal.cont.button("+", () => {
+            t.button("+", () => {
             
             let num1 = parseInt(label1.getText());
             let num2 = parseInt(label2.getText());
