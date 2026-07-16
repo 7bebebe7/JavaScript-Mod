@@ -1,5 +1,4 @@
 const moo = extend(UnitType, "mushroom", {
-    constructor: UnitTypes.vela.constructor,
     health: 7500,
     armor: 9,
     speed: 0.38,
@@ -10,4 +9,7 @@ const moo = extend(UnitType, "mushroom", {
     mechFrontSway: 0.3,
     mechStepShake: 0.4,
     buildSpeed: 3,
+    hitsize: 8,
+    legCount: 2,
+    legGroupSize: 1,
 });
