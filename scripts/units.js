@@ -2,7 +2,6 @@ const moo = extend(UnitType, "mushroom", {
     health: 7500,
     armor: 9,
     speed: 0.38,
-    hitSize: 34,
     flying: false,
     canBoost: true,    
     boostMultiplier: 3,
