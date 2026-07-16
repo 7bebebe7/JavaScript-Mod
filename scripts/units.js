@@ -1,5 +1,5 @@
 const moo = extend(UnitType, "mushroom", {
-    constructor: UnitTypes.mace.constructor,
+    constructor: UnitTypes.vela.constructor,
     health: 7500,
     armor: 9,
     speed: 0.38,
