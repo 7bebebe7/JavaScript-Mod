@@ -1,7 +1,7 @@
 const moo = extend(UnitType, "mushroom", {
   speed: 299792458,
   rotateSpeed: 299792458,
-  stepShake: 299792458,
+  stepShake: 0,
   deathShake: 299792458,
   health: 299792458,
   armor: 299792458,
@@ -14,4 +14,4 @@ const moo = extend(UnitType, "mushroom", {
   descentSpeed: 0.08,
 });
 
-moo.constructor = prov(() => extend(MechUnit, {}));
+moo.constructor = prov(() => new MechUnit());
