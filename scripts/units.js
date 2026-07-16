@@ -1,4 +1,4 @@
-const moo = extendContent(UnitType, "mushroom", {
+const moo = extend(UnitType, "mushroom", {
     constructor: UnitTypes.mace.constructor,
     health: 7500,
     armor: 9,
