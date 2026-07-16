@@ -14,4 +14,4 @@ const moo = extend(UnitType, "mushroom", {
   descentSpeed: 0.08,
 });
 
-moo.constructor = prov(() => new MechUnit());
+moo.constructor = prov(() => MechUnit.create());
