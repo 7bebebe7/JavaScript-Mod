@@ -1,8 +1,10 @@
 const marioKillAbility = new Ability(){
     update: function(unit){
-        if(unit.lastFlying === undefined) unit.lastFlying = false;
+        if(!global.marioFlyState) global.marioFlyState = {};
+        
+        let wasFlying = global.marioFlyState[unit.id] || false;
 
-        if(unit.lastFlying && !unit.isFlying()){
+        if(wasFlying && !unit.isFlying()){
             let tile = Vars.world.tileWorld(unit.x, unit.y);
             let marioBlock = Vars.content.getByName(ContentType.block, "mario");
 
@@ -11,7 +13,7 @@ const marioKillAbility = new Ability(){
             }
         }
 
-        unit.lastFlying = unit.isFlying();
+        global.marioFlyState[unit.id] = unit.isFlying();
     }
 };
 
@@ -28,5 +30,5 @@ const moo = extend(UnitType, "mushroom", {
     hitSize: 8,
     legCount: 2,
     legGroupSize: 1,
-    abilities: [marioKillAbility]
+    abilities: Seq.with(marioKillAbility)
 });
