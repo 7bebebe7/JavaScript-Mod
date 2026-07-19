@@ -12,25 +12,25 @@ const moo = extend(UnitType, "mushroom", {
     legCount: 2,
     legGroupSize: 1,
     
-    constructor: function(){
+    constructor: new Prov(function(){
         return extend(MechUnit, {
             lastFlying: false,
-
+    
             update: function(){
                 this.super$update();
-
+    
                 if(this.lastFlying && !this.isFlying()){
-
+    
                     let tile = Vars.world.tileWorld(this.x, this.y);
                     let marioBlock = Vars.content.getByName(ContentType.block, "mario");
-
+    
                     if(tile != null && tile.build != null && tile.block() == marioBlock){
                         tile.build.kill();
                     }
                 }
-
+    
                 this.lastFlying = this.isFlying();
             }
         });
-    }
+    })
 });
