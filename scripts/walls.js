@@ -151,7 +151,7 @@ const mario = extend(Wall, "mario", {
     ),
     solid: false,
     passable: true
-})
+}):
 
 //other function-----
 

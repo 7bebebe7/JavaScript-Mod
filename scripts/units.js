@@ -19,7 +19,10 @@ moo.constructor = () => extend(MechUnit, {
         this.super$update();
 
         if(this.lastFlying && !this.isFlying()){
+            
             let tile = Vars.world.tileWorld(this.x, this.y);
+            
+            let mario = Vars.content.getByName(ContentType.block, "mario");
 
             if(tile != null && tile.build != null && tile.block() == mario){
                 tile.build.kill();
