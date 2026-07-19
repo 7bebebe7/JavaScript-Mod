@@ -140,6 +140,17 @@ PWL.buildType = () => extend(Wall.WallBuild, PWL, {
     }
 });
 
+const mario = extend(Wall, "mario", {
+    size: 1,
+    health: 3,
+    category: Category.defense,
+    buildVisibility: BuildVisibility.shown,
+    requirements: ItemStack.with(
+        Items.blastCompound, 50
+        Items.pyratite, 350
+    )
+})
+
 //other function-----
 
 Events.on(BlockBuildEndEvent, e => {
