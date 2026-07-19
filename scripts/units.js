@@ -22,10 +22,10 @@ moo.constructor = () => extend(MechUnit, {
             
             let tile = Vars.world.tileWorld(this.x, this.y);
             
-            let mario = Vars.content.getByName(ContentType.block, "jsm-mario");
+            let mario = Vars.content.getByName(ContentType.block, "mario");
 
             if(tile != null && tile.build != null && tile.block() == mario){
-                tile.build.kill();
+                mario.kill();
             }
         }
 
