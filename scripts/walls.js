@@ -148,7 +148,9 @@ const mario = extend(Wall, "mario", {
     requirements: ItemStack.with(
         Items.blastCompound, 50,
         Items.pyratite, 350
-    )
+    ),
+    solid: false,
+    passable: true
 })
 
 //other function-----
