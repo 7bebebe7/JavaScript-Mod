@@ -11,24 +11,26 @@ const moo = extend(UnitType, "mushroom", {
     hitSize: 8,
     legCount: 2,
     legGroupSize: 1,
-});
-moo.constructor = () => extend(MechUnit, {
-    lastFlying: false,
+    
+    constructor: function(){
+        return extend(MechUnit, {
+            lastFlying: false,
 
-    update(){
-        this.super$update();
+            update: function(){
+                this.super$update();
 
-        if(this.lastFlying && !this.isFlying()){
-            
-            let tile = Vars.world.tileWorld(this.x, this.y);
-            
-            let mario = Vars.content.getByName(ContentType.block, "mario");
+                if(this.lastFlying && !this.isFlying()){
 
-            if(tile != null && tile.build != null && tile.block() == mario){
-                mario.kill();
+                    let tile = Vars.world.tileWorld(this.x, this.y);
+                    let marioBlock = Vars.content.getByName(ContentType.block, "mario");
+
+                    if(tile != null && tile.build != null && tile.block() == marioBlock){
+                        tile.build.kill();
+                    }
+                }
+
+                this.lastFlying = this.isFlying();
             }
-        }
-
-        this.lastFlying = this.isFlying();
+        });
     }
 });
