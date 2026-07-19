@@ -146,7 +146,7 @@ const mario = extend(Wall, "mario", {
     category: Category.defense,
     buildVisibility: BuildVisibility.shown,
     requirements: ItemStack.with(
-        Items.blastCompound, 50
+        Items.blastCompound, 50,
         Items.pyratite, 350
     )
 })
