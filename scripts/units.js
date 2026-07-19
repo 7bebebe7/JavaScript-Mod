@@ -6,7 +6,7 @@ const marioKillAbility = new Ability(){
 
         if(wasFlying && !unit.isFlying()){
             let tile = Vars.world.tileWorld(unit.x, unit.y);
-            let marioBlock = Vars.content.getByName(ContentType.block, "mario");
+            let marioBlock = Vars.content.getByName(ContentType.block, "jsm-mario");
 
             if(tile != null && tile.build != null && tile.block() == marioBlock){
                 tile.build.kill();
