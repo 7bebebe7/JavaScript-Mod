@@ -12,3 +12,20 @@ const moo = extend(UnitType, "mushroom", {
     legCount: 2,
     legGroupSize: 1,
 });
+moo.constructor = () => extend(MechUnit, {
+    lastFlying: false,
+
+    update(){
+        this.super$update();
+
+        if(this.lastFlying && !this.isFlying()){
+            let tile = Vars.world.tileWorld(this.x, this.y);
+
+            if(tile != null && tile.build != null && tile.block() == mario){
+                tile.build.kill();
+            }
+        }
+
+        this.lastFlying = this.isFlying();
+    }
+});
