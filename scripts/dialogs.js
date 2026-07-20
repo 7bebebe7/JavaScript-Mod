@@ -1,4 +1,4 @@
-        Events.on(ClientLoadEvent, e => {
+Events.on(ClientLoadEvent, e => {
           Vars.ui.settings.addCategory("JSM", Icon.file, cons(t => {
             
             // чек бокс
@@ -15,90 +15,9 @@
             }).left().row();
             
             t.add("[gray]Show tile block name in Inspector \n(does not apply to console)").left().padLeft(35).row();
-            
-            t.check("Show Dev Menu", Core.settings.getBool("SDM", false), v => {
-              Core.settings.put("SDM", v);
-              SetApl()
-            }).left().row();
-            
-            t.add("[gray]The changes will be applied after restarting the game").left().padLeft(35).row();
-            
-            // кнопка з інонкою "і", текстом, для простої кнопки з  текстом: не вказувати параметер Icon
-            t.button("content", Icon.info, () => {
-              // те що робить кніпка
-              showCont()
-                  //розмір, відступи, та "ентер"
-            }).center().padTop(20).size(200, 50).row();
-            
           }));
           
-          //контентовий діалог
-          function showCont() {
-           const con = new BaseDialog("mod content");
-    
-           con.cont.pane(p => {
-    
-            p.button("r0uter", new TextureRegionDrawable(Core.atlas.find("jsm-r0uter")), () => {
-                const rou = Vars.content.block("jsm-r0uter");
-                if (rou) Vars.ui.content.show(rou);
-            }).size(210, 64).padTop(10).row();;
-    
-            p.button("feedbacker", new TextureRegionDrawable(Core.atlas.find("jsm-feedbacker")), () => {
-                const b = Vars.content.block("jsm-feedbacker");
-                if (b) Vars.ui.content.show(b);
-            }).size(210, 64).padTop(10).row();
-    
-            p.button("VarWall", new TextureRegionDrawable(Core.atlas.find("jsm-VarWall")), () => {
-                const VW = Vars.content.block("jsm-VarWall");
-                if (VW) Vars.ui.content.show(VW);
-            }).size(210, 64).padTop(10).row();
-    
-            p.button("Inspector", new TextureRegionDrawable(Core.atlas.find("jsm-Inspector")), () => {
-                const INSP = Vars.content.block("jsm-Inspector");
-                if (INSP) Vars.ui.content.show(INSP);
-            }).size(210, 64).padTop(10).row();
-    
-            p.button("menu", new TextureRegionDrawable(Core.atlas.find("jsm-menu")), () => {
-                const menu = Vars.content.block("jsm-menu");
-                if (menu) Vars.ui.content.show(menu);
-            }).size(210, 64).padTop(10).row();
-    
-            p.button("tur", new TextureRegionDrawable(Core.atlas.find("jsm-tur")), () => {
-                const tur = Vars.content.block("jsm-tur");
-                if (tur) Vars.ui.content.show(tur);
-            }).size(210, 64).padTop(10).row();
-    
-            p.button("sentry", new TextureRegionDrawable(Core.atlas.find("jsm-sentry")), () => {
-                const sentry = Vars.content.block("jsm-sentry");
-                if (sentry) Vars.ui.content.show(sentry);
-            }).size(210, 64).padTop(10).row();
-    
-            p.button("dtek", new TextureRegionDrawable(Core.atlas.find("jsm-dtek")), () => {
-                const dtek = Vars.content.block("jsm-dtek");
-                if (dtek) Vars.ui.content.show(dtek);
-            }).size(210, 128).padTop(10).row();
-    
-            p.button("pmd", new TextureRegionDrawable(Core.atlas.find("jsm-pmd")), () => {
-                const pmd = Vars.content.block("jsm-pmd");
-                if (pmd) Vars.ui.content.show(pmd);
-            }).size(210, 128).padTop(10).row();
-    
-          }).size(260, 300);
-    
-            con.addCloseButton();
-            con.show();
-          }
-          
-          // діалогове вікно це функція щоб упростити код та виклик цього вікна
-          //саме вікно:
-          function showMyDialog() {
-            const d = new BaseDialog("hello");
-            d.cont.image(Core.atlas.find("jsm-hi")).size(200, 200).pad(10).row();
-            d.cont.add("Hi it's test:)").row();
-            d.buttons.button("bye", () => d.hide()).size(210, 64);
-            d.show();
-          }
-          
+
           // Показ вікна якщо чекбокс активний
           if (Core.settings.getBool("mess", true)) {
             showMyDialog();
@@ -130,89 +49,6 @@
             Vars.ui.hudfrag.showToast(Icon.info, "bye!");
         }).size(210, 64);
         M.show();
-    }
-    
-    //Dev Menu-----
-    
-    function DevMenu() {
-       const DM = new BaseDialog("Dev Menu");
-       DM.buttons.button("close", () => { DM.hide() }).size(150, 60).padBottom(20)
-       DM.cont.button(Icon.production, () => { Resources() }).size(60, 60).pad(10)
-       DM.show()
-    }
-    
-    //Dev Menu/Resources-----
-    
-    function Resources() {
-        const res = new BaseDialog("Resources");
-        
-        res.cont.pane(l => {
-            
-            l.button(new TextureRegionDrawable(Items.copper.uiIcon), () => { 
-                
-                let IC = resSlider.getValue()
-                Vars.player.team().core().items.add(Items.copper, IC)
-                
-            }).size(60, 60)
-            
-            l.button(new TextureRegionDrawable(Items.lead.uiIcon), () => { 
-                
-                let IC = resSlider.getValue()
-                Vars.player.team().core().items.add(Items.lead, IC)
-                
-            }).size(60, 60)
-            
-        }).row()
-        
-        let label = res.cont.add("0").colspan(3).center().get();
-        res.cont.row()
-        
-        res.cont.button(Icon.cancel,  () => {
-            
-            var count = resSlider.getValue()
-            count -=100 
-            if (count < -10000) {
-                count = -10000
-            }
-            resSlider.setValue(count);
-            
-        }).size(50,50).padRight(5)
-        
-        var resSlider
-        
-        resSlider = res.cont.slider(-10000, 10000, 1, 0, ReValue => {
-            
-        print("Значение: " + ReValue);
-        
-        label.setText("" + Math.floor(ReValue));
-        
-        }).width(300).get()
-        
-        res.cont.button(Icon.add,  () => {
-            
-            var count = resSlider.getValue()
-            count +=100 
-            if (count > 10000) {
-                count = 10000
-            }
-            resSlider.setValue(count);
-            
-        }).size(50,50).padLeft(5).row()
-    
-        res.buttons.button("close", () => { res.hide() }).size(150, 60).padBottom(20)
-        
-        res.show()
-        
-    }
-    
-    //setting apply-----
-    
-    function SetApl() {
-        const SA = new BaseDialog("exit game?");
-        SA.cont.add("[red]restart the game to apply the changes?").row()
-        SA.cont.button("No thanks", () => { SA.hide() }).size(140, 60).row()
-        SA.cont.button("Ok", () => { Packages.arc.Core.app.exit() }).size(140, 60)
-        SA.show()
     }
     
     //calculator-----
@@ -304,8 +140,16 @@
         
         cal.show();
     }
-    
 
+    //greeting 
+    
+    function showMyDialog() {
+            const d = new BaseDialog("hello");
+            d.cont.image(Core.atlas.find("jsm-hi")).size(200, 200).pad(10).row();
+            d.cont.add("Hi it's test:)").row();
+            d.buttons.button("bye", () => d.hide()).size(210, 64);
+            d.show();
+          }
 
     //export-----
     module.exports = {
