@@ -154,5 +154,4 @@ Events.on(ClientLoadEvent, e => {
     //export-----
     module.exports = {
        blockmenu: blockmenu,
-       SetApl: SetApl,
     };
