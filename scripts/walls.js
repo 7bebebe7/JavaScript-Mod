@@ -150,7 +150,8 @@ const mario = extend(Wall, "mario", {
         Items.pyratite, 350
     ),
     solid: false,
-    passable: true
+    passable: true,
+    hasShadow: false
 })
 
 //other function-----

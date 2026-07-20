@@ -1,6 +1,6 @@
 //import-----
 
-const { b, sb, emp, mega } = require("bullets");
+const { b, sb, emp } = require("bullets");
 const { GB } = require("particles");
 
 //turrets-----
@@ -60,24 +60,7 @@ const xy = extend(ItemTurret, "xyeta", {
         Items.graphite, 4000
     )
 });
-xy.ammo( Items.thorium, mega );
-
-const xyi = extend(ItemTurret, "xyetaII", {
-    size: 1,
-    health: 2500,
-    range: 0,
-    reload: 999999,
-    trackingRange: 100,
-    category: Category.turret,
-    buildVisibility: BuildVisibility.shown,
-    requirements: ItemStack.with(
-        Items.copper, 1000,
-        Items.lead, 2000,
-        Items.metaglass, 3000,
-        Items.graphite, 4000
-    )
-});
-xyi.ammo( Items.thorium, );
+xy.ammo( Items.thorium, );
 
 const dod = extend(LiquidTurret, "dod", {
     size: 1,

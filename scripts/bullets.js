@@ -49,18 +49,6 @@ const emp = extend(EmpBulletType, {
    empDuration: 60 * 5
 });
 
-const mega = extend(BasicBulletType, {
-   speed: 999,
-   damage: 99999,
-   homingPower: 10,
-   width: 1,
-   height: 1,
-   unitDamageScl: 10.0,
-   status: StatusEffects.boss,
-   statusDuration: 9999,
-   lifetime: 9999,
-   knockback: 999
-});
 
 //export-----
 
@@ -68,5 +56,4 @@ module.exports = {
    b: b,
    sb: sb,
    emp: emp,
-   mega: mega,
 };
