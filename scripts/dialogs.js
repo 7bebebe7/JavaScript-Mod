@@ -169,6 +169,8 @@ Events.on(ClientLoadEvent, e => {
           upm.hide();
           UPothere()
         }).size(140,140).padLeft(10)
+        
+        upm.show()
     }
     
     //upBlock/up
@@ -176,7 +178,7 @@ Events.on(ClientLoadEvent, e => {
     function UPup() {
         const upu = new BaseDialog("upgrades");
         upu.addCloseButton();
-        upm.show()
+        upu.show()
     }
     
     //upBlock/info
