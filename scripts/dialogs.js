@@ -156,19 +156,16 @@ Events.on(ClientLoadEvent, e => {
         
         upm.addCloseButton();
         upm.cont.button(Icon.arrowNote, () => {
-          upm.hide();
           UPup()
-        }).size(140,140).padLeft(10);
+        }).size(200,200).padLeft(30).padTop(10);
         
         upm.cont.button(Icon.info, () => {
-          upm.hide();
           UPinfo()
-        }).size(140,140).padLeft(10);
+        }).size(200,200).padLeft(30).padTop(10);
         
         upm.cont.button(Icon.book, () => {
-          upm.hide();
           UPothere()
-        }).size(140,140).padLeft(10)
+        }).size(200,200).padLeft(30).padTop(10)
         
         upm.show()
     }
