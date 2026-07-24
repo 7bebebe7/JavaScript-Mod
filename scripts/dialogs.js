@@ -20,7 +20,7 @@ Events.on(ClientLoadEvent, e => {
           // Показ вікна якщо чекбокс активний
           if (Core.settings.getBool("mess", true)) {
             UPmain();
-        });
+        }})
         
     function blockmenu() {
         const M = new BaseDialog("hello");
