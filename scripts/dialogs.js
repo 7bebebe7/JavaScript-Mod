@@ -13,16 +13,13 @@ Events.on(ClientLoadEvent, e => {
               Core.settings.put("ISN", v);
               print(v ? "on" : "off");
             }).left().row();
-            
             t.add("[gray]Show tile block name in Inspector \n(does not apply to console)").left().padLeft(35).row();
           }));
           
 
           // Показ вікна якщо чекбокс активний
           if (Core.settings.getBool("mess", true)) {
-            showMyDialog();
-            //з викликом вікна яке тепер функція
-          }
+            UPmain();
         });
         
     function blockmenu() {
@@ -150,7 +147,50 @@ Events.on(ClientLoadEvent, e => {
             d.buttons.button("bye", () => d.hide()).size(210, 64);
             d.show();
           }
-
+        
+    //upBlock/main
+    
+    function UPmain() {
+        const upm = new BaseDialog("set option");
+        
+        upm.addCloseButton();
+        upm.cont.button(Icon.arrow-note, () => {
+          upm.hide();
+          UPup()
+        }).size(140,140).padLeft(10);
+        
+        upm.cont.button(Icon.info, () => {
+          upm.hide();
+          UPinfo()
+        }).size(140,140).padLeft(10);
+        
+        upm.cont.button(Icon.book, () => {
+          upm.hide();
+          UPothere()
+        }).size(140,140).padLeft(10)
+    }
+    
+    //upBlock/up
+    
+    function UPup() {
+        const upu = new BaseDialog("upgrades");
+        upu.addCloseButton();
+    }
+    
+    //upBlock/info
+    
+    function UPinfo() {
+        const upi = new BaseDialog("info");
+        upi.addCloseButton();
+    }
+    
+    //upBlock/othere
+    
+    function UPothere() {
+        const upo = new BaseDialog("othere");
+        upo.addCloseButton();
+    }
+    
     //export-----
     module.exports = {
        blockmenu: blockmenu,
