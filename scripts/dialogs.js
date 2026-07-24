@@ -20,7 +20,6 @@ Events.on(ClientLoadEvent, e => {
           // Показ вікна якщо чекбокс активний
           if (Core.settings.getBool("mess", true)) {
             UPmain();
-        }})
         
     function blockmenu() {
         const M = new BaseDialog("hello");
@@ -154,7 +153,7 @@ Events.on(ClientLoadEvent, e => {
         const upm = new BaseDialog("set option");
         
         upm.addCloseButton();
-        upm.cont.button(Icon.arrow-note, () => {
+        upm.cont.button(Icon.arrowNote, () => {
           upm.hide();
           UPup()
         }).size(140,140).padLeft(10);
@@ -175,6 +174,7 @@ Events.on(ClientLoadEvent, e => {
     function UPup() {
         const upu = new BaseDialog("upgrades");
         upu.addCloseButton();
+        upm.show()
     }
     
     //upBlock/info
@@ -182,6 +182,7 @@ Events.on(ClientLoadEvent, e => {
     function UPinfo() {
         const upi = new BaseDialog("info");
         upi.addCloseButton();
+        upi.show()
     }
     
     //upBlock/othere
@@ -189,6 +190,7 @@ Events.on(ClientLoadEvent, e => {
     function UPothere() {
         const upo = new BaseDialog("othere");
         upo.addCloseButton();
+        upo.show()
     }
     
     //export-----
