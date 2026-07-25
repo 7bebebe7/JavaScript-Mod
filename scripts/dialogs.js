@@ -169,7 +169,7 @@ Events.on(ClientLoadEvent, e => {
         
         upm.cont.table(Tex.button, t => {
             t.label(() => "12345").center()
-        })
+        }).colspan(3)
         
         upm.show()
     }
