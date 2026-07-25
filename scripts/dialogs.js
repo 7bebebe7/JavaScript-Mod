@@ -154,7 +154,7 @@ Events.on(ClientLoadEvent, e => {
     function UPmain() {
         const upm = new BaseDialog("set option");
         
-        let this.points = 0;
+        let points = 0;
         let inc = 1;
         
         Timer.schedule(() => {
@@ -175,7 +175,7 @@ Events.on(ClientLoadEvent, e => {
         }).size(200,200).padLeft(30).padTop(10).row();
         
         upm.cont.table(Tex.button, t => {
-            t.add("P: " + this.points).height(60).center();
+            t.add("P: " + points).height(60).center();
         }).fillX().colspan(3).padTop(30);
         
         upm.show()
