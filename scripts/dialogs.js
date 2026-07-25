@@ -154,7 +154,7 @@ Events.on(ClientLoadEvent, e => {
     function UPmain() {
         const upm = new BaseDialog("set option");
         
-        let points = 0;
+        let this.points = 0;
         let inc = 1;
         
         Timer.schedule(() => {
