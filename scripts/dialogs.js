@@ -155,7 +155,7 @@ Events.on(ClientLoadEvent, e => {
         const upm = new BaseDialog("set option");
         
         upm.addCloseButton();
-        upm.cont.button(Icon.arrowNote, () => {
+        upm.cont.button(Icon.up, () => {
           UPup()
         }).size(200,200).padLeft(30).padTop(10);
         
@@ -165,7 +165,11 @@ Events.on(ClientLoadEvent, e => {
         
         upm.cont.button(Icon.book, () => {
           UPothere()
-        }).size(200,200).padLeft(30).padTop(10)
+        }).size(200,200).padLeft(30).padTop(10).row();
+        
+        upm.cont.table(Tex.button, t => {
+            t.label(() => "12345")
+        }).fillY()
         
         upm.show()
     }
