@@ -168,8 +168,8 @@ Events.on(ClientLoadEvent, e => {
         }).size(200,200).padLeft(30).padTop(10).row();
         
         upm.cont.table(Tex.button, t => {
-            t.label(() => "12345")
-        }).colspan(3)
+            t.label(() => "12345").center()
+        })
         
         upm.show()
     }
