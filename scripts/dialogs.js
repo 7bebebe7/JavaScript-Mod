@@ -157,7 +157,7 @@ Events.on(ClientLoadEvent, e => {
         upm.addCloseButton();
         upm.cont.button(Icon.up, () => {
           UPup()
-        }).size(200,200).padLeft(30).padTop(10);
+        }).size(200,200).padTop(10);
         
         upm.cont.button(Icon.info, () => {
           UPinfo()
@@ -168,7 +168,7 @@ Events.on(ClientLoadEvent, e => {
         }).size(200,200).padLeft(30).padTop(10).row();
         
         upm.cont.table(Tex.button, t => {
-            t.add("12345").center();
+            t.add("12345").height(60).center();
         }).fillX().colspan(3);
         
         upm.show()
