@@ -179,7 +179,7 @@ Events.on(ClientLoadEvent, e => {
         }).fillX().colspan(3).padTop(30);
         
         upm.show()
-    }
+    };
     
     //upBlock/up
     
