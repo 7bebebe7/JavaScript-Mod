@@ -154,6 +154,13 @@ Events.on(ClientLoadEvent, e => {
     function UPmain() {
         const upm = new BaseDialog("set option");
         
+        let points = 0;
+        let inc = 1;
+        
+        Timer.schedule(() => {
+            points += inc
+        }, 1, 1);
+        
         upm.addCloseButton();
         upm.cont.button(Icon.up, () => {
           UPup()
@@ -168,8 +175,8 @@ Events.on(ClientLoadEvent, e => {
         }).size(200,200).padLeft(30).padTop(10).row();
         
         upm.cont.table(Tex.button, t => {
-            t.add("12345").height(60).center();
-        }).fillX().colspan(3);
+            t.add("P: " + this.points).height(60).center();
+        }).fillX().colspan(3).padTop(30);
         
         upm.show()
     }
