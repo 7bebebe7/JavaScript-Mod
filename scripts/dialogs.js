@@ -175,7 +175,7 @@ Events.on(ClientLoadEvent, e => {
         }).size(200,200).padLeft(30).padTop(10).row();
         
         upm.cont.table(Tex.button, t => {
-            t.add("P: " + points).height(60).center();
+            t.label(() => "P: " + points).height(60).center();
         }).fillX().colspan(3).padTop(30);
         
         upm.show()
