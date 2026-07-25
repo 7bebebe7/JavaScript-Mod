@@ -151,11 +151,11 @@ Events.on(ClientLoadEvent, e => {
         
     //upBlock/main
     
-    function UPmain() {
+    let points = 0;
+    let inc = 1;
+    
+    fыunction UPmain() {
         const upm = new BaseDialog("set option");
-        
-        let points = 0;
-        let inc = 1;
         
         Timer.schedule(() => {
             points += inc
