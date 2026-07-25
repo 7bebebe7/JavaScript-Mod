@@ -147,14 +147,14 @@ Events.on(ClientLoadEvent, e => {
             d.cont.add("Hi it's test:)").row();
             d.buttons.button("bye", () => d.hide()).size(210, 64);
             d.show();
-          };
+    }
         
     //upBlock/main
     
     let points = 0;
     let inc = 1;
     
-    fыunction UPmain() {
+    function UPmain() {
         const upm = new BaseDialog("set option");
         
         Timer.schedule(() => {
@@ -179,7 +179,7 @@ Events.on(ClientLoadEvent, e => {
         }).fillX().colspan(3).padTop(30);
         
         upm.show()
-    };
+    }
     
     //upBlock/up
     
