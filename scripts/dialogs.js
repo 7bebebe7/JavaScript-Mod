@@ -196,9 +196,8 @@ Events.on(ClientLoadEvent, e => {
         upi.addCloseButton();
         
         upi.cont.table(Tex.button, t => {
-            t.label(() => "points info:").center().row();
-            t.label(() => "points in sec = points += income").row();
-        }).size(250, 64)
+            t.label(() => "points info: \n\n points in sec = points += income").center();
+        });
         
         upi.show()
     }
