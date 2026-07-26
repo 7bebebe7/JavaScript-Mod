@@ -159,7 +159,7 @@ Events.on(ClientLoadEvent, e => {
         
         Timer.schedule(() => {
             points += inc
-        }, 1, 1);
+        }, 5, 5);
         
         upm.addCloseButton();
         upm.cont.button(Icon.up, () => {
@@ -194,6 +194,11 @@ Events.on(ClientLoadEvent, e => {
     function UPinfo() {
         const upi = new BaseDialog("info");
         upi.addCloseButton();
+        
+        upi.cont.table(Tex.button, t => {
+            t.label(() => "points info:").center()
+        }).size(250, 64)
+        
         upi.show()
     }
     
