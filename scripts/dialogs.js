@@ -196,7 +196,15 @@ Events.on(ClientLoadEvent, e => {
         upi.addCloseButton();
         
         upi.cont.table(Tex.button, t => {
-            t.label(() => "points info: \n\n points in sec = points += income").center();
+            t.label(() => "points info:").center().row();
+            t.label(() => "1P in 5 sec").center().row();
+            t.label(() => "in income lvl 2, 2P in 5 sec and more..").center();
+        }).padBottom(30);
+        
+        upi.cont.table(Tex.button, tII => {
+            tII.label(() => "upgrades:").center().row();
+            tII.label(() => "[grey]grey:[white] adds a small bonus to stats").center().row();
+            tII.label(() => "[blue]blue:[white] adds a bonus to stats").center();
         });
         
         upi.show()
