@@ -196,9 +196,9 @@ Events.on(ClientLoadEvent, e => {
         upi.addCloseButton();
         
         upi.cont.table(Tex.button, t => {
-            t.label(() => "[ancient]points[white] info:").center().row();
-            t.label(() => "1[ancient]P[white] in 5 sec").center().row();
-            t.label(() => "in income lvl 2, 2[ancient]P[white] in 5 sec and more..").center();
+            t.label(() => "[gold]points[white] info:").center().row();
+            t.label(() => "1[gold]P[white] in 5 sec").center().row();
+            t.label(() => "in income lvl 2, 2[gold]P[white] in 5 sec and more..").center();
         }).padBottom(30).row();
         
         upi.cont.table(Tex.button, tII => {
@@ -206,7 +206,7 @@ Events.on(ClientLoadEvent, e => {
             tII.label(() => "[grey]grey:[white] adds a small bonus to stats").center().row();
             tII.label(() => "[blue]blue:[white] adds a bonus to stats").center().row();
             tII.label(() => "[violet]violet:[white] adds a big bonus to stats").center().row();
-            tII.label(() => "[ancient]gold:[white] adds new abilities").center();
+            tII.label(() => "[gold]gold:[white] adds new abilities").center();
             
         });
         
