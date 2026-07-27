@@ -1,76 +1,78 @@
 Events.on(ClientLoadEvent, e => {
-          Vars.ui.settings.addCategory("JSM", Icon.file, cons(t => {
-            
-            // чек бокс
-            t.check("Initial Message", Core.settings.getBool("mess", true), v => {
-              Core.settings.put("mess", v);
-              print(v ? "on" : "off");
-            }).left().row();
-            
-            t.add("[gray]You can change it by replacing the file /sprites/hi.png").left().padLeft(35).row(); //.row() тепер не отдельна функція
-            
-            t.check("Show Tile Name", Core.settings.getBool("ISN", true), v => {
-              Core.settings.put("ISN", v);
-              print(v ? "on" : "off");
-            }).left().row();
-            t.add("[gray]Show tile block name in Inspector \n(does not apply to console)").left().padLeft(35).row();
-          }));
-          
-
-          // Показ вікна якщо чекбокс активний
-          if (Core.settings.getBool("mess", true)) {
-              UPmain();
-          }
-    })
+    Vars.ui.settings.addCategory("JSM", Icon.file, cons(t => {
         
-    function blockmenu() {
-        const M = new BaseDialog("hello");
+        // чек бокс
+        t.check("Initial Message", Core.settings.getBool("mess", true), v => {
+            Core.settings.put("mess", v);
+            print(v ? "on" : "off");
+        }).left().row();
+        
+        t.add("[gray]You can change it by replacing the file /sprites/hi.png").left().padLeft(35).row(); //.row() тепер не отдельна функція
+        
+        t.check("Show Tile Name", Core.settings.getBool("ISN", true), v => {
+            Core.settings.put("ISN", v);
+            print(v ? "on" : "off");
+        }).left().row();
+        t.add("[gray]Show tile block name in Inspector \n(does not apply to console)").left().padLeft(35).row();
+    }));
     
-        M.cont.button(new TextureRegionDrawable(Core.atlas.find("jsm-calc-icon")), () => {
-            calc()
-        }).size(60,60).padLeft(10).padRight(10);
-        
-        M.cont.button( new TextureRegionDrawable(Core.atlas.find("jsm-50-50-icon")), () => {
-            
-            if (Math.random() > 0.5) {
-                Vars.ui.hudfrag.showToast(Icon.ok, "You Vin!");
-            } else {
-                Vars.ui.hudfrag.showToast(Icon.info, "You lost :(");
-                
-                Time.run(60 * 5, () => { Packages.arc.Core.app.exit() });
-            }
-            
-        }).size(64, 64).center().row();
-        
-        M.buttons.button("back", () => {
-            M.hide();
-            Vars.ui.hudfrag.showToast(Icon.info, "bye!");
-        }).size(210, 64);
-        M.show();
+    
+    // Показ вікна якщо чекбокс активний
+    if (Core.settings.getBool("mess", true)) {
+        UPmain();
     }
+})
+
+//block menu-----
+
+function blockmenu() {
+    const M = new BaseDialog("hello");
     
-    //calculator-----
+    M.cont.button(new TextureRegionDrawable(Core.atlas.find("jsm-calc-icon")), () => {
+        calc()
+    }).size(60, 60).padLeft(10).padRight(10);
     
-    function calc() {
-        const cal = new BaseDialog("Calculator");
+    M.cont.button(new TextureRegionDrawable(Core.atlas.find("jsm-50-50-icon")), () => {
         
-        cal.cont.add("[grey]Number 1").center().row()
-        
-        let label1 = cal.cont.add(new TextField("", Styles.defaultField)).width(200).get();
-        label1.setFilter(TextField.TextFieldFilter.digitsOnly);
-        
-        cal.cont.row();
-        
-        cal.cont.add("[grey]Number 2").center().padTop(5).row()
-        
-        let label2 = cal.cont.add(new TextField("", Styles.defaultField)).width(200).get();
-        label2.setFilter(TextField.TextFieldFilter.digitsOnly);
-        
-        cal.cont.row();
-        
-        cal.cont.table(cons(t => {
+        if (Math.random() > 0.5) {
+            Vars.ui.hudfrag.showToast(Icon.ok, "You Vin!");
+        } else {
+            Vars.ui.hudfrag.showToast(Icon.info, "You lost :(");
             
-            t.button("+", () => {
+            Time.run(60 * 5, () => { Packages.arc.Core.app.exit() });
+        }
+        
+    }).size(64, 64).center().row();
+    
+    M.buttons.button("back", () => {
+        M.hide();
+        Vars.ui.hudfrag.showToast(Icon.info, "bye!");
+    }).size(210, 64);
+    M.show();
+}
+
+//calculator-----
+
+function calc() {
+    const cal = new BaseDialog("Calculator");
+    
+    cal.cont.add("[grey]Number 1").center().row()
+    
+    let label1 = cal.cont.add(new TextField("", Styles.defaultField)).width(200).get();
+    label1.setFilter(TextField.TextFieldFilter.digitsOnly);
+    
+    cal.cont.row();
+    
+    cal.cont.add("[grey]Number 2").center().padTop(5).row()
+    
+    let label2 = cal.cont.add(new TextField("", Styles.defaultField)).width(200).get();
+    label2.setFilter(TextField.TextFieldFilter.digitsOnly);
+    
+    cal.cont.row();
+    
+    cal.cont.table(cons(t => {
+        
+        t.button("+", () => {
             
             let num1 = parseInt(label1.getText());
             let num2 = parseInt(label2.getText());
@@ -79,7 +81,7 @@ Events.on(ClientLoadEvent, e => {
             
         }).size(60, 60).padTop(3).padLeft(5).padRight(5).padBottom(3);
         
-            t.button("-", () => {
+        t.button("-", () => {
             
             let num1 = parseInt(label1.getText());
             let num2 = parseInt(label2.getText());
@@ -88,7 +90,7 @@ Events.on(ClientLoadEvent, e => {
             
         }).size(60, 60).padTop(3).padLeft(5).padRight(5).padBottom(3);
         
-            t.button("*", () => {
+        t.button("*", () => {
             
             let num1 = parseInt(label1.getText());
             let num2 = parseInt(label2.getText());
@@ -97,10 +99,10 @@ Events.on(ClientLoadEvent, e => {
             
         }).size(60, 60).padTop(3).padLeft(5).padRight(5).padBottom(3);
         
-            t.button("/", () => {
+        t.button("/", () => {
             
-                let num1 = parseInt(label1.getText());
-                let num2 = parseInt(label2.getText());
+            let num1 = parseInt(label1.getText());
+            let num2 = parseInt(label2.getText());
             
             if (num2 == 0) {
                 reslabel.setText("null")
@@ -110,7 +112,7 @@ Events.on(ClientLoadEvent, e => {
             
         }).size(60, 60).padTop(3).padLeft(5).padRight(5).padBottom(3);
         
-            t.button("%", () => {
+        t.button("%", () => {
             
             let num1 = parseInt(label1.getText());
             let num2 = parseInt(label2.getText());
@@ -119,116 +121,134 @@ Events.on(ClientLoadEvent, e => {
             
         }).size(60, 60).padTop(3).padLeft(5).padRight(5).padBottom(3);
         
-        })).center().row();
+    })).center().row();
+    
+    let reslabel = cal.cont.add(new Label("Result")).width(200).center().get();
+    reslabel.setAlignment(Align.center);
+    
+    cal.buttons.button(Icon.none, () => {
         
-        let reslabel = cal.cont.add(new Label("Result")).width(200).center().get();
-        reslabel.setAlignment(Align.center);
+        label1.setText("");
+        label2.setText("");
+        reslabel.setText("Result");
         
-        cal.buttons.button(Icon.none, () => { 
-            
-            label1.setText("");
-            label2.setText("");
-            reslabel.setText("Result");
-            
-        }).size(64, 64).padLeft(5);
-        
-        cal.buttons.button("back", () => { cal.hide() }).size(210, 64);
-        
-        cal.buttons.button(Icon.copy, () => { Core.app.setClipboardText(reslabel.getText()) }).size(64, 64).padLeft(5);
-        
-        cal.show();
-    }
+    }).size(64, 64).padLeft(5);
+    
+    cal.buttons.button("back", () => { cal.hide() }).size(210, 64);
+    
+    cal.buttons.button(Icon.copy, () => { Core.app.setClipboardText(reslabel.getText()) }).size(64, 64).padLeft(5);
+    
+    cal.show();
+}
 
-    //greeting 
+//greeting-----
+
+function showMyDialog() {
+    const d = new BaseDialog("hello");
+    d.cont.image(Core.atlas.find("jsm-hi")).size(200, 200).pad(10).row();
+    d.cont.add("Hi it's test:)").row();
+    d.buttons.button("bye", () => d.hide()).size(210, 64);
+    d.show();
+}
+
+//upBlock/main-----
+
+let points = 0;
+let inc = 1;
+
+function UPmain() {
+    const upm = new BaseDialog("set option");
     
-    function showMyDialog() {
-            const d = new BaseDialog("hello");
-            d.cont.image(Core.atlas.find("jsm-hi")).size(200, 200).pad(10).row();
-            d.cont.add("Hi it's test:)").row();
-            d.buttons.button("bye", () => d.hide()).size(210, 64);
-            d.show();
-    }
-        
-    //upBlock/main
+    Timer.schedule(() => {
+        points += inc
+    }, 5, 5);
     
-    let points = 0;
-    let inc = 1;
+    upm.addCloseButton();
+    upm.cont.button(Icon.up, () => {
+        UPup()
+    }).size(200, 200).padTop(10);
     
-    function UPmain() {
-        const upm = new BaseDialog("set option");
-        
-        Timer.schedule(() => {
-            points += inc
-        }, 5, 5);
-        
-        upm.addCloseButton();
-        upm.cont.button(Icon.up, () => {
-          UPup()
-        }).size(200,200).padTop(10);
-        
-        upm.cont.button(Icon.info, () => {
-          UPinfo()
-        }).size(200,200).padLeft(30).padTop(10);
-        
-        upm.cont.button(Icon.book, () => {
-          UPothere()
-        }).size(200,200).padLeft(30).padTop(10).row();
-        
-        upm.cont.table(Tex.button, t => {
-            t.label(() => "P: " + points).height(60).center();
-        }).fillX().colspan(3).padTop(30);
-        
-        upm.show()
-    }
+    upm.cont.button(Icon.info, () => {
+        UPinfo()
+    }).size(200, 200).padLeft(30).padTop(10);
     
-    //upBlock/up
+    upm.cont.button(Icon.book, () => {
+        UPothere()
+    }).size(200, 200).padLeft(30).padTop(10).row();
     
-    function UPup() {
-        const upu = new BaseDialog("upgrades");
-        upu.addCloseButton();
-        upu.show()
-    }
+    upm.cont.table(Tex.button, t => {
+        t.label(() => "P: " + points).height(60).center();
+    }).fillX().colspan(3).padTop(30);
     
-    //upBlock/info
+    upm.show()
+}
+
+//upBlock/up-----
+
+function UPup() {
+    const upu = new BaseDialog("upgrades");
+    upu.addCloseButton();
+    upu.show()
+}
+
+//upBlock/info-----
+
+function UPinfo() {
+    const upi = new BaseDialog("info");
+    upi.addCloseButton();
     
-    function UPinfo() {
-        const upi = new BaseDialog("info");
-        upi.addCloseButton();
-        
-        upi.cont.table(Tex.button, t => {
-            t.label(() => "[gold]points[white] info:").center().row();
-            t.label(() => "1[gold]P[white] in 5 sec").center().row();
-            t.label(() => "in income lvl 2, 2[gold]P[white] in 5 sec and more..").center();
-        }).padBottom(15).padTop(15).row();
-        
-        upi.cont.table(Tex.button, tII => {
-            tII.label(() => "upgrades:").center().row();
-            tII.label(() => "[grey]grey:[white] adds a small bonus to stats").center().row();
-            tII.label(() => "[blue]blue:[white] adds a bonus to stats").center().row();
-            tII.label(() => "[violet]violet:[white] adds a big bonus to stats").center().row();
-            tII.label(() => "[gold]gold:[white] adds new abilities").center();
-        }).padBottom(15).padTop(15).row();
-        
-        upi.cont.table(Tex.button, tIII => {
-            tIII.label(() => "chances:").center().row();
-            tIII.label(() => "[grey]grey:[white] 60%").center().row();
-            tIII.label(() => "[blue]blue:[white] 20%").center().row();
-            tIII.label(() => "[violet]violet:[white] 15%").center().row();
-            tIII.label(() => "[gold]gold:[white] 5%").center();
-        }).padBottom(15).padTop(15);
-        
-        upi.show()
-    }
+    upi.cont.table(Tex.button, t => {
+        t.label(() => "[gold]points[white] info:").center().row();
+        t.label(() => "1[gold]P[white] in 5 sec").center().row();
+        t.label(() => "in income lvl 2, 2[gold]P[white] in 5 sec and more..").center();
+    }).padBottom(15).padTop(15).row();
     
-    //upBlock/othere
+    upi.cont.table(Tex.button, tII => {
+        tII.label(() => "upgrades:").center().row();
+        tII.label(() => "[grey]grey:[white] adds a small bonus to stats").center().row();
+        tII.label(() => "[blue]blue:[white] adds a bonus to stats").center().row();
+        tII.label(() => "[violet]violet:[white] adds a big bonus to stats").center().row();
+        tII.label(() => "[gold]gold:[white] adds new abilities").center();
+    }).padBottom(15).padTop(15).row();
     
-    function UPothere() {
-        const upo = new BaseDialog("othere");
-        upo.addCloseButton();
-        upo.show()
-    }
+    upi.cont.table(Tex.button, tIII => {
+        tIII.label(() => "chances:").center().row();
+        tIII.label(() => "[grey]grey:[white] 60%").center().row();
+        tIII.label(() => "[blue]blue:[white] 20%").center().row();
+        tIII.label(() => "[violet]violet:[white] 15%").center().row();
+        tIII.label(() => "[gold]gold:[white] 5%").center();
+    }).padBottom(15).padTop(15);
     
-    //export-----
-    module.exports = {
-       blockmenu: blockmenu
-    }
+    upi.show()
+}
+
+//upBlock/othere-----
+
+function UPothere() {
+    const upo = new BaseDialog("othere");
+    
+    upo.addCloseButton();
+    
+    upo.cont.table(Tex.button, t => {
+        t.add("all upgrades:")
+    }).top().growX();
+    
+    const cont = new Table(Tex.button);
+    
+    cont.add("1");
+    
+    const collapser = new Collapser(cont, true);
+    
+    upo.cont.button("income", () => {
+        collapser.toggle();
+    }).size(210,64).row();
+    
+    upo.cont.add(collapser).row();
+    
+    upo.show()
+}
+
+//export-----
+module.exports = {
+    blockmenu: blockmenu
+}
