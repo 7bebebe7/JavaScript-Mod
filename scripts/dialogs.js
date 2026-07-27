@@ -199,7 +199,7 @@ Events.on(ClientLoadEvent, e => {
             t.label(() => "[gold]points[white] info:").center().row();
             t.label(() => "1[gold]P[white] in 5 sec").center().row();
             t.label(() => "in income lvl 2, 2[gold]P[white] in 5 sec and more..").center();
-        }).padBottom(30).row();
+        }).padBottom(15).padTop(15).row();
         
         upi.cont.table(Tex.button, tII => {
             tII.label(() => "upgrades:").center().row();
@@ -207,8 +207,15 @@ Events.on(ClientLoadEvent, e => {
             tII.label(() => "[blue]blue:[white] adds a bonus to stats").center().row();
             tII.label(() => "[violet]violet:[white] adds a big bonus to stats").center().row();
             tII.label(() => "[gold]gold:[white] adds new abilities").center();
-            
-        });
+        }).padBottom(15).padTop(15).row();
+        
+        upi.cont.table(Tex.button, tIII => {
+            tIII.label(() => "chances:").center().row();
+            tIII.label(() => "[grey]grey:[white] 60%").center().row();
+            tIII.label(() => "[blue]blue:[white] 20%").center().row();
+            tIII.label(() => "[violet]violet:[white] 15%").center().row();
+            tIII.label(() => "[gold]gold:[white] 5%").center();
+        }).padBottom(15).padTop(15);
         
         upi.show()
     }
