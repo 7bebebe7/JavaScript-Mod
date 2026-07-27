@@ -231,7 +231,7 @@ function UPothere() {
     
     upo.cont.table(Tex.button, t => {
         t.add("all upgrades:")
-    }).top().growX();
+    }).top().growX().row();
     
     const cont = new Table(Tex.button);
     
